@@ -1,25 +1,26 @@
 @font-face {
   font-family: "League Spartan";
   font-weight: 300;
-  src: url("./assets/fonts/static/LeagueSpartan-Light.ttf") format("ttf");
+  src: url("./assets/fonts/static/LeagueSpartan-Light.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "League Spartan";
   font-weight: 400;
-  src: url("./assets/fonts/static/LeagueSpartan-Regular.ttf") format("ttf");
+  src: url("./assets/fonts/static/LeagueSpartan-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "League Spartan";
   font-weight: 600;
-  src: url("./assets/fonts/static/LeagueSpartan-SemiBold.ttf") format("ttf");
+  src: url("./assets/fonts/static/LeagueSpartan-SemiBold.ttf")
+    format("truetype");
 }
 
 @font-face {
   font-family: "League Spartan";
   font-weight: 700;
-  src: url("./assets/fonts/static/LeagueSpartan-Bold.ttf") format("ttf");
+  src: url("./assets/fonts/static/LeagueSpartan-Bold.ttf") format("truetype");
 }
 
 * {
@@ -31,6 +32,12 @@
 
 :root {
   --horizontal-padding: 150px;
+
+  --beaver: #9e7f66;
+  --mirage: #17192b;
+  --cod-gray: #111111;
+  --ebony-clay: #242b37;
+  --shuttle-gray: #5c6779;
 }
 
 .body {
