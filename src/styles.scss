@@ -21,3 +21,17 @@
 .footer {
   background: black;
 }
+
+.text {
+  &_white {
+    color: white;
+  }
+}
+
+.button {
+  &_white {
+    background: rgba(0, 0, 0, 1);
+    border: 1px solid white;
+    color: white;
+  }
+}
