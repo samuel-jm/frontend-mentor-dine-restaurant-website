@@ -56,42 +56,38 @@
 
   padding: 0 var(--horizontal-padding);
 
-  z-index: -1;
-
   &_dark {
     background: black;
   }
 }
 
 .hero {
-  $height: 600px;
+  $height: 820px;
   height: $height;
 
-  padding-top: 50px;
+  padding-top: 65px;
 
-  & .image {
+  &__image {
     height: $height;
-  }
-
-  &__text-group {
-    margin-top: 150px;
-    margin-bottom: 40px;
-  }
-
-  &_button {
-  }
-}
-
-.image {
-  &_hero {
     position: absolute;
     top: 0;
     right: 0;
   }
 
-  &_background {
-    position: absolute;
-    z-index: -1;
+  &__text-group {
+    position: relative; // to keep the text in front
+
+    margin-top: 153px;
+    margin-bottom: 40px;
+  }
+
+  &__heading {
+    width: 12ch;
+    margin-bottom: 10px;
+  }
+
+  &__body {
+    width: 37ch;
   }
 }
 
@@ -101,7 +97,7 @@
   &_variant_one {
     position: absolute;
 
-    width: 60%;
+    width: 58%;
     height: 100%;
 
     top: 0;
@@ -116,15 +112,22 @@
 }
 
 .button {
+  width: 245px;
+  height: 64px;
+
   &_white {
-    background: rgba(0, 0, 0, 1);
+    background: none;
     border: 1px solid white;
     color: white;
+  }
+
+  &:hover {
+    color: green;
   }
 }
 
 .logo {
-  height: 30px;
+  height: 40px;
   width: auto;
 }
 
@@ -137,35 +140,45 @@
     font-family: "League Spartan";
     font-weight: 600;
     font-size: 17px;
+    line-height: 28px;
+    letter-spacing: 2.5px;
   }
 
   &_heading_m {
     font-family: "League Spartan";
     font-weight: 700;
     font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.25px;
   }
 
   &_heading_l {
     font-family: "League Spartan";
     font-weight: 700;
     font-size: 48px;
+    line-height: 48px;
+    letter-spacing: -0.5px;
   }
 
   &_heading_xl {
     font-family: "League Spartan";
     font-weight: 300;
     font-size: 80px;
+    line-height: 80px;
+    letter-spacing: -1px;
   }
 
   &_body_1 {
     font-family: "League Spartan";
     font-weight: 400;
     font-size: 20px;
+    line-height: 30px;
   }
 
   &_body_2 {
     font-family: "League Spartan";
     font-weight: 400;
     font-size: 16px;
+    line-height: 26px;
   }
 }
