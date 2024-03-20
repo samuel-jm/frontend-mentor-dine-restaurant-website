@@ -1,4 +1,5 @@
 import "./styles.scss";
+import html from "./index.html";
 
 console.log(
   [...document.querySelector("main").querySelectorAll("*")]
