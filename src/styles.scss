@@ -11,3 +11,13 @@
 
   align-items: center;
 }
+
+.section {
+  &_dark {
+    background: black;
+  }
+}
+
+.footer {
+  background: black;
+}
