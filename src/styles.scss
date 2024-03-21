@@ -80,15 +80,6 @@
     margin-top: 153px;
     margin-bottom: 40px;
   }
-
-  &__heading {
-    width: 12ch;
-    margin-bottom: 10px;
-  }
-
-  &__body {
-    width: 37ch;
-  }
 }
 
 .enjoyable-place {
@@ -100,17 +91,6 @@
     top: 50%;
     transform: translateY(-55%);
     right: var(--horizontal-padding);
-  }
-
-  &__heading {
-    width: 13ch;
-
-    margin-top: 55px;
-    margin-bottom: 27px;
-  }
-
-  &__body {
-    width: 38ch;
   }
 
   &__image {
@@ -140,17 +120,6 @@
     top: 50%;
     transform: translateY(-10%);
     left: var(--horizontal-padding);
-  }
-
-  &__heading {
-    width: 13ch;
-
-    margin-top: 55px;
-    margin-bottom: 27px;
-  }
-
-  &__body {
-    width: 38ch;
   }
 
   &__image {
@@ -297,5 +266,48 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
+  }
+}
+
+.text-group {
+  &__divide-pattern {
+    margin-bottom: 55px;
+  }
+
+  &_size_hero > &__heading {
+    width: 14ch;
+    margin-bottom: 10px;
+  }
+
+  &_size_hero > &__body {
+    width: 38ch;
+    margin-bottom: 10px;
+  }
+
+  &_size_regular > &__heading {
+    width: 13ch;
+    margin-bottom: 27px;
+  }
+
+  &_size_regular > &__body {
+    width: 38ch;
+  }
+
+  &_size_small > &__heading {
+    width: 16ch;
+    margin-bottom: 27px;
+  }
+
+  &_size_small > &__body {
+    width: 40ch;
+  }
+
+  &_size_large > &__heading {
+    width: fit-content;
+    margin-bottom: 6px;
+  }
+
+  &_size_large > &__body {
+    width: 38ch;
   }
 }
