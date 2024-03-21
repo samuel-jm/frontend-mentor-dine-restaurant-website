@@ -31,7 +31,7 @@
 }
 
 :root {
-  --horizontal-padding: 150px;
+  --horizontal-padding: 165px;
 
   --beaver: #9e7f66;
   --mirage: #17192b;
@@ -236,10 +236,84 @@
     width: 32px;
 
     position: absolute;
-    top: 50%;
+    top: calc(50% - 1px);
     left: -62px;
 
     border-bottom: 1px solid var(--beaver);
+  }
+}
+
+.family-gathering {
+  height: 920px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  &__container {
+    display: flex;
+
+    gap: 65px;
+
+    justify-self: end;
+
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 540px;
+    height: auto;
+
+    box-shadow: 0 55px 80px -20px #aaa;
+  }
+
+  &__top-right-pattern {
+    width: auto;
+    height: auto;
+
+    position: absolute;
+
+    top: 0;
+    left: -350px;
+  }
+
+  &__lines-pattern {
+    width: auto;
+    height: auto;
+
+    position: absolute;
+
+    top: 122px;
+    left: calc(var(--horizontal-padding) - 40px);
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__line-pattern {
+    position: absolute;
+
+    width: 320px;
+
+    transform: rotate(180deg);
+    transform-origin: left;
+
+    border-bottom: 1px solid var(--beaver);
+
+    z-index: -1;
+
+    top: calc(50% - 1px);
+    left: -32px;
   }
 }
 
@@ -257,14 +331,23 @@
   width: 245px;
   height: 64px;
 
-  &_white {
-    background: none;
-    border: 1px solid white;
-    color: white;
-  }
+  background: none;
+  border: 1px solid var(--cod-gray);
+  color: var(--cod-gray);
 
   &:hover {
-    color: green;
+    color: white;
+    background: var(--cod-gray);
+  }
+
+  &_white {
+    border: 1px solid white;
+    color: white;
+
+    &:hover {
+      color: var(--mirage);
+      background: white;
+    }
   }
 }
 
@@ -278,6 +361,10 @@
 
   &_white {
     color: white;
+  }
+
+  &_inactive {
+    color: #a6a6a6;
   }
 
   &_heading_s {
@@ -329,6 +416,8 @@
 
 .text-group {
   &__divide-pattern {
+    width: auto;
+    height: auto;
     margin-bottom: 55px;
   }
 
