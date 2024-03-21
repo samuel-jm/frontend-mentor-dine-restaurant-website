@@ -334,8 +334,6 @@
 
   padding: 0;
 
-  // padding: var(--horizontal-padding);
-
   &__crop {
     position: absolute;
 
@@ -368,14 +366,29 @@
   }
 }
 
-.crop {
-  overflow: hidden;
+.footer {
+  height: 240px;
+
+  background: black;
+  width: min(100%, 1440px);
+
+  display: flex;
+
+  gap: 192px;
+
+  padding-top: 78px;
+
+  &__grid {
+    height: 84px;
+
+    display: grid;
+
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  }
 }
 
-.footer {
-  background: black;
-
-  width: min(100%, 1440px);
+.crop {
+  overflow: hidden;
 }
 
 .button {
@@ -448,6 +461,14 @@
     font-size: 80px;
     line-height: 80px;
     letter-spacing: -1px;
+  }
+
+  &_heading_footer {
+    font-family: "League Spartan";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 2px;
   }
 
   &_body_1 {
