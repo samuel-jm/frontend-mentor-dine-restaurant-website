@@ -262,9 +262,9 @@
   &__container {
     display: flex;
 
-    gap: 65px;
+    height: 468px;
 
-    justify-self: end;
+    justify-content: space-between;
 
     flex-direction: column;
   }
@@ -300,6 +300,11 @@
 
     top: 122px;
     left: calc(var(--horizontal-padding) - 40px);
+  }
+
+  &__button {
+    position: absolute;
+    top: 447px;
   }
 
   &__list {
