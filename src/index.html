@@ -209,12 +209,10 @@
           <div class="slides__container">
             <div class="text-group text-group_size_regular slides__text-group">
               <h2 class="text text_heading_l text-group__heading">
-                Family Gathering
+                {{heading}}
               </h2>
               <p class="text text_body_1 text-group__body">
-                We love catering for entire families. So please bring everyone
-                along for a special meal with your loved ones. We'll provide a
-                memorable experience for all.
+                {{body}}
               </p>
             </div>
             <input
@@ -224,13 +222,25 @@
             />
             <ul class="slides__list">
               <div class="slides__line-pattern"></div>
-              <li class="slides__item text text_heading_s" data-active="true">
+              <li
+                class="slides__item text text_heading_s"
+                id="list-item-family-gathering"
+                data-active="false"
+              >
                 FAMILY GATHERING
               </li>
-              <li class="slides__item text text_heading_s" data-active="false">
+              <li
+                class="slides__item text text_heading_s"
+                id="list-item-special-events"
+                data-active="false"
+              >
                 SPECIAL EVENTS
               </li>
-              <li class="slides__item text text_heading_s" data-active="false">
+              <li
+                class="slides__item text text_heading_s"
+                id="list-item-social-events"
+                data-active="false"
+              >
                 SOCIAL EVENTS
               </li>
             </ul>
