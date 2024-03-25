@@ -186,61 +186,57 @@
           </div>
         </div>
       </section>
-      <section class="section family-gathering">
-        <img
-          src="./assets/patterns/pattern-curve-top-right.svg"
-          alt="pattern"
-          class="family-gathering__top-right-pattern"
-          height="200"
-        />
-        <img
-          src="./assets/patterns/pattern-lines.svg"
-          alt="pattern"
-          class="family-gathering__lines-pattern"
-          width="125"
-        />
-        <img
-          src="./assets/homepage/family-gathering-desktop@2x.jpg"
-          alt="Family eating dinner at a large Table"
-          class="family-gathering__image"
-          height="300"
-        />
-        <div class="family-gathering__container">
-          <div
-            class="text-group text-group_size_regular family-gathering__text-group"
-          >
-            <h2 class="text text_heading_l text-group__heading">
-              Family Gathering
-            </h2>
-            <p class="text text_body_1 text-group__body">
-              We love catering for entire families. So please bring everyone
-              along for a special meal with your loved ones. We'll provide a
-              memorable experience for all.
-            </p>
-          </div>
-          <input
-            type="button"
-            class="button text_heading_s"
-            value="BOOK A TABLE"
+      <script class="slides-template" type="text/x-handlebars-template">
+        <section class="section slides">
+          <img
+            src="{{patternTopRight}}"
+            alt="pattern"
+            class="slides__top-right-pattern"
+            height="200"
           />
-          <ul class="family-gathering__list">
-            <li class="family-gathering__item text text_heading_s">
-              <div class="family-gathering__line-pattern"></div>
-              FAMILY GATHERING
-            </li>
-            <li
-              class="family-gathering__item text text_inactive text_heading_s"
-            >
-              SPECIAL EVENTS
-            </li>
-            <li
-              class="family-gathering__item text text_inactive text_heading_s"
-            >
-              SOCIAL EVENTS
-            </li>
-          </ul>
-        </div>
-      </section>
+          <img
+            src="{{patternLines}}"
+            alt="pattern"
+            class="slides__lines-pattern"
+            width="125"
+          />
+          <img
+            src="{{image}}"
+            alt="Family eating dinner at a large Table"
+            class="slides__image"
+            height="300"
+          />
+          <div class="slides__container">
+            <div class="text-group text-group_size_regular slides__text-group">
+              <h2 class="text text_heading_l text-group__heading">
+                Family Gathering
+              </h2>
+              <p class="text text_body_1 text-group__body">
+                We love catering for entire families. So please bring everyone
+                along for a special meal with your loved ones. We'll provide a
+                memorable experience for all.
+              </p>
+            </div>
+            <input
+              type="button"
+              class="button text_heading_s"
+              value="BOOK A TABLE"
+            />
+            <ul class="slides__list">
+              <div class="slides__line-pattern"></div>
+              <li class="slides__item text text_heading_s" data-active="true">
+                FAMILY GATHERING
+              </li>
+              <li class="slides__item text text_heading_s" data-active="false">
+                SPECIAL EVENTS
+              </li>
+              <li class="slides__item text text_heading_s" data-active="false">
+                SOCIAL EVENTS
+              </li>
+            </ul>
+          </div>
+        </section>
+      </script>
       <section class="section cta">
         <div class="crop cta__crop">
           <img

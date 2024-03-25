@@ -249,7 +249,7 @@
   }
 }
 
-.family-gathering {
+.slides {
   height: 920px;
 
   display: flex;
@@ -309,8 +309,20 @@
   &__item {
     position: relative;
 
+    user-select: none;
+
+    &[data-active="false"] {
+      color: #a6a6a6;
+    }
+
     &:not(:last-child) {
       margin-bottom: 12px;
+    }
+
+    &:hover {
+      color: var(--ebony-clay);
+
+      cursor: pointer;
     }
   }
 
@@ -404,6 +416,7 @@
   &:hover {
     color: white;
     background: var(--cod-gray);
+    cursor: pointer;
   }
 
   &_white {
@@ -427,10 +440,6 @@
 
   &_white {
     color: white;
-  }
-
-  &_inactive {
-    color: #a6a6a6;
   }
 
   &_heading_s {
