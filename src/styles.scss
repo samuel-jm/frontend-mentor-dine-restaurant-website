@@ -31,7 +31,8 @@
 }
 
 :root {
-  --horizontal-padding: 165px;
+  --t: calc(100vw - 1240px) / calc(1440 - 1240);
+  --horizontal-padding: clamp(65px, 65px + var(--t) * (165 - 65), 165px);
 
   --beaver: #9e7f66;
   --mirage: #17192b;
@@ -196,11 +197,7 @@
 
   display: flex;
 
-  justify-content: space-between;
-
   &__text-group {
-    position: relative;
-
     margin-top: 203px;
   }
 
