@@ -23,16 +23,16 @@ module.exports = {
         loader: "html-loader",
       },
       {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
+      {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
       },
     ],
   },

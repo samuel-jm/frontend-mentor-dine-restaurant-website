@@ -6,9 +6,9 @@
   },
   "extends": [
     "airbnb",
-    "plugin:prettier/recommended",
     "plugin:node/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -16,7 +16,6 @@
   },
   "plugins": ["prettier", "react"],
   "rules": {
-    "prettier/prettier": "error",
     "no-plusplus": "off",
     "no-console": "off",
     "no-continue": "off",
@@ -24,21 +23,16 @@
     "no-fallthrough": "off",
     "no-use-before-define": "off",
     "prefer-destructuring": "off",
+    "no-shadow": "off",
     "node/no-unsupported-features/es-syntax": [
       "error",
       { "ignores": ["modules"] }
     ],
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": false,
-        "optionalDependencies": false,
-        "peerDependencies": false
-      }
-    ],
+    "import/no-extraneous-dependencies": "off",
     "node/no-unpublished-require": [
       "error",
       { "allowModules": ["html-webpack-plugin", "webpack-merge"] }
-    ]
+    ],
+    "node/no-unpublished-import": ["error", { "allowModules": ["handlebars"] }]
   }
 }
