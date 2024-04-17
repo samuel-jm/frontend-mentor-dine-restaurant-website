@@ -432,44 +432,66 @@
             class="text text_form_1 form__input"
             type="text"
             placeholder="Name"
+            name="name"
           />
-          <input
-            class="text text_form_1 form__input"
-            type="email"
-            placeholder="Email"
-          />
+          <div class="form__required-label-group">
+            <input
+              class="text text_form_1 form__input"
+              type="text"
+              placeholder="Email"
+              name="email"
+            />
+            <label class="text text_form_3 form__required form__required_offset"
+              >This field is required</label
+            >
+          </div>
           <div class="form__group">
-            <label class="text text_form_1 form__label">Pick a date</label>
+            <div class="form__required-label-group">
+              <label class="text text_form_1 form__label"> Pick a date </label>
+              <label class="text text_form_3 form__required">
+                This field is incomplete
+              </label>
+            </div>
             <div class="form__tuple">
               <input
                 class="text text_form_1 form__input"
                 type="text"
                 placeholder="MM"
+                name="month"
               />
               <input
                 class="text text_form_1 form__input"
                 type="text"
                 placeholder="DD"
+                name="day"
               />
               <input
                 class="text text_form_1 form__input"
                 type="text"
                 placeholder="YYYY"
+                name="year"
               />
             </div>
           </div>
           <div class="form__group">
-            <label class="text text_form_1 form__label">Pick a time</label>
+            <div class="form__required-label-group">
+              <label class="text text_form_1 form__label">Pick a time </label>
+              <label class="text text_form_3 form__required">
+                This field is incomplete
+              </label>
+            </div>
             <div class="form__tuple">
               <input
                 class="text text_form_1 form__input"
                 type="text"
                 placeholder="09"
+                name="hour"
               />
               <input
                 class="text text_form_1 form__input"
                 type="text"
                 placeholder="00"
+                name="minute"
               />
               <select class="text text_form_1 form__input form__dropdown">
                 <option value="AM" selected>AM</option>
@@ -491,7 +513,7 @@
             />
           </div>
           <input
-            type="button"
+            type="submit"
             value="MAKE RESERVATION"
             class="button text_heading_s cta__button"
             data-action="make-reservation"

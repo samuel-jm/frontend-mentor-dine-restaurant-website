@@ -1,5 +1,6 @@
 import "./styles.scss";
 import "./classListModule";
+import "./bookigModule";
 import "./slides";
 
 const mainElement = document.querySelector(".main");
