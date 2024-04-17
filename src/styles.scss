@@ -213,6 +213,8 @@
 
   display: flex;
 
+  gap: 50px;
+
   &__text-group {
     margin-top: 203px;
   }
@@ -225,6 +227,8 @@
   }
 
   &__list {
+    flex-shrink: 1;
+
     display: flex;
     flex-direction: column;
 
@@ -253,9 +257,9 @@
 
   &__line-pattern {
     width: 32px;
+    height: calc(50% - 1px);
 
     position: absolute;
-    top: calc(50% - 1px);
     left: -62px;
 
     border-bottom: 1px solid var(--beaver);
