@@ -55,8 +55,87 @@ const bookingModule = (() => {
     hourElement.toggleAttribute("invalid");
     minuteElement.toggleAttribute("invalid");
 
+    if (isNameValid(nameElement.value)) {
+      nameElement.removeAttribute("invalid");
+      nameRequiredLabel.removeAttribute("invalid");
+    } else {
+      nameElement.setAttribute("invalid", "");
+      nameRequiredLabel.setAttribute("invalid", "");
+    }
+
+    if (isEmailValid(emailElement.value)) {
+      emailElement.removeAttribute("invalid");
+      emailRequiredLabel.removeAttribute("invalid");
+    } else {
+      emailElement.setAttribute("invalid", "");
+      emailRequiredLabel.setAttribute("invalid", "");
+    }
+
+    if (isDateValid(monthElement.value, dayElement.value, yearElement.value)) {
+      dateLabel.removeAttribute("invalid");
+      dateIncompleteLabel.removeAttribute("invalid");
+      dayElement.removeAttribute("invalid");
+      monthElement.removeAttribute("invalid");
+      yearElement.removeAttribute("invalid");
+    } else {
+      dateLabel.setAttribute("invalid", "");
+      dateIncompleteLabel.setAttribute("invalid", "");
+      dayElement.setAttribute("invalid", "");
+      monthElement.setAttribute("invalid", "");
+      yearElement.setAttribute("invalid", "");
+    }
+
+    if (isTimeValid(hourElement.value, minuteElement.value)) {
+      timeLabel.toggleAttribute("invalid");
+      timeIncompleteLabel.toggleAttribute("invalid");
+      hourElement.removeAttribute("invalid");
+      minuteElement.removeAttribute("invalid");
+    } else {
+      timeLabel.toggleAttribute("invalid", "");
+      timeIncompleteLabel.toggleAttribute("invalid", "");
+      hourElement.setAttribute("invalid", "");
+      minuteElement.setAttribute("invalid", "");
+    }
+
     event.preventDefault();
   });
+
+  function isNameValid(name) {
+    return name !== "";
+  }
+
+  function isEmailValid(email) {
+    return /^\S+@\S+\.\S+$/.test(email);
+  }
+
+  function isDateValid(month, day, year) {
+    const dayReg = /^[0-9]{2}$/;
+    const monthReg = /^[0-9]{2}$/;
+    const yearReg = /^[0-9]{4}$/;
+    if (!dayReg.test(day) || !monthReg.test(month) || !yearReg.test(year))
+      return false;
+    if (
+      +day < 1 ||
+      +day > 31 ||
+      +month < 1 ||
+      +month > 12 ||
+      year < 2024 ||
+      year > 2050
+    ) {
+      return false;
+    }
+
+    return true;
+  }
+
+  function isTimeValid(hour, minute) {
+    const reg = /^[0-9]{2}$/;
+    if (reg.test(hour) && reg.test(minute)) {
+      return +hour >= 0 && +hour < 12 && +minute >= 0 && +minute < 60;
+    }
+
+    return false;
+  }
 })();
 
 export default bookingModule;
