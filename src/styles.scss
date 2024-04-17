@@ -50,7 +50,7 @@
   align-items: center;
 }
 
-.main {
+main {
   width: min(100%, 1440px);
 }
 
@@ -275,14 +275,12 @@
 
   &__slide {
     opacity: 0;
-    visibility: hidden;
+    display: none;
 
     position: absolute;
     inset: 0;
 
     height: $height;
-
-    display: flex;
 
     gap: 50px;
 
@@ -293,7 +291,7 @@
 
     &[active] {
       opacity: 1;
-      visibility: visible;
+      display: flex;
     }
   }
 
@@ -423,6 +421,59 @@
 
   &__button {
     margin-right: var(--horizontal-padding);
+  }
+}
+
+.booking {
+  height: 600px;
+
+  display: flex;
+
+  align-items: center;
+
+  &__logo {
+    position: absolute;
+    z-index: 1;
+
+    top: 65px;
+  }
+
+  &__crop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    inset: 0;
+  }
+
+  &__image {
+    height: 100%;
+  }
+
+  &__text-group {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+}
+
+.pattern-section {
+  height: 319px;
+
+  padding: 0;
+
+  & > img {
+    position: absolute;
+    height: auto;
+  }
+
+  &__lines-pattern {
+    top: 165px;
+    left: 665px;
   }
 }
 
