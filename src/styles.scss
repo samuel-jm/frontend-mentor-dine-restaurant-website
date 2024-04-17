@@ -271,17 +271,19 @@
 
   display: flex;
 
+  gap: 50px;
+
   align-items: center;
   justify-content: space-between;
 
   overflow: hidden;
 
   &__container {
+    position: relative;
+
     display: flex;
 
-    height: 468px;
-
-    justify-content: space-between;
+    justify-content: center;
 
     flex-direction: column;
   }
@@ -291,7 +293,7 @@
 
     z-index: 1;
 
-    width: 540px;
+    max-width: min(50%, 540px);
     height: auto;
 
     box-shadow: 0 55px 80px -20px #aaa;
@@ -320,8 +322,8 @@
   }
 
   &__button {
-    position: absolute;
-    top: 447px;
+    margin-top: 60px;
+    margin-bottom: 79px;
   }
 
   &__list {
