@@ -1,5 +1,8 @@
 const bookingModule = (() => {
   // cache DOM
+  const mainElement = document.querySelector(".main");
+  const bookingElement = document.querySelector(".booking-page");
+
   const form = document.querySelector(".form");
   const nameElement = form.querySelector("[name='name']");
   const nameRequiredLabel = nameElement.nextElementSibling;
@@ -24,6 +27,10 @@ const bookingModule = (() => {
   let timeDropdownSelectedItem =
     timeDropdownListElement.querySelector("li[data-selected]");
 
+  const submitButtonElement = form.querySelector(
+    "input[data-action='make-reservation']",
+  );
+
   timeDropdownIconElement.addEventListener("click", (event) => {
     timeDropdownIconElement.toggleAttribute("data-open");
     timeDropdownListElement.toggleAttribute("data-inactive");
@@ -39,6 +46,11 @@ const bookingModule = (() => {
       timeDropdownSelectedItem = event.target;
       timeDropdownSelectedItem.toggleAttribute("data-selected");
     }
+  });
+
+  submitButtonElement.addEventListener("click", (event) => {
+    bookingElement.style.display = "none";
+    mainElement.style.display = "flow";
   });
 
   [(minusButton, addButton)].forEach((button) => {
@@ -102,13 +114,13 @@ const bookingModule = (() => {
     }
 
     if (isTimeValid(hourElement.value, minuteElement.value)) {
-      timeLabel.toggleAttribute("invalid");
-      timeIncompleteLabel.toggleAttribute("invalid");
+      timeLabel.removeAttribute("invalid");
+      timeIncompleteLabel.removeAttribute("invalid");
       hourElement.removeAttribute("invalid");
       minuteElement.removeAttribute("invalid");
     } else {
-      timeLabel.toggleAttribute("invalid", "");
-      timeIncompleteLabel.toggleAttribute("invalid", "");
+      timeLabel.setAttribute("invalid", "");
+      timeIncompleteLabel.setAttribute("invalid", "");
       hourElement.setAttribute("invalid", "");
       minuteElement.setAttribute("invalid", "");
     }
