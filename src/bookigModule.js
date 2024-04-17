@@ -18,14 +18,30 @@ const bookingModule = (() => {
   const minusButton = form.querySelector(".form__button-subtract");
   const addButton = form.querySelector(".form__button-add");
 
-  // [(minusButton, addButton)].forEach((button) =>
-  //   button.addEventListener("click", (event) => {
-  //     const number = personCount;
-  //     console.log(number);
-  //   }),
-  // );
+  const timeDropdownIconElement = form.querySelector(".form__dropdown-icon");
+  const timeDropdownListElement = form.querySelector(".form__dropdown-list");
+  const timeDropdownTextElement = form.querySelector(".form__dropdown-text");
+  let timeDropdownSelectedItem =
+    timeDropdownListElement.querySelector("li[data-selected]");
 
-  [minusButton, addButton].forEach((button) => {
+  timeDropdownIconElement.addEventListener("click", (event) => {
+    timeDropdownIconElement.toggleAttribute("data-open");
+    timeDropdownListElement.toggleAttribute("data-inactive");
+  });
+
+  timeDropdownListElement.addEventListener("click", (event) => {
+    console.log(event.target.textContent);
+    if (event.target.matches("li.form__dropdown-item")) {
+      timeDropdownTextElement.textContent = event.target.textContent;
+      timeDropdownIconElement.toggleAttribute("data-open");
+      timeDropdownListElement.toggleAttribute("data-inactive");
+      timeDropdownSelectedItem.toggleAttribute("data-selected");
+      timeDropdownSelectedItem = event.target;
+      timeDropdownSelectedItem.toggleAttribute("data-selected");
+    }
+  });
+
+  [(minusButton, addButton)].forEach((button) => {
     button.addEventListener("click", (event) => {
       const number = personCount.textContent.match(/[0-9]+/)[0];
 
