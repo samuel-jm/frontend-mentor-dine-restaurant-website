@@ -1,101 +1,36 @@
-import Handlebars from "handlebars";
-import patternTopRight from "./assets/patterns/pattern-curve-top-right.svg";
-import patternLines from "./assets/patterns/pattern-lines.svg";
-import imageFamilyGathering from "./assets/homepage/family-gathering-desktop@2x.jpg";
-import imageSpecialEvents from "./assets/homepage/special-events-desktop@2x.jpg";
-import imageSocialEvents from "./assets/homepage/social-events-desktop@2x.jpg";
-import slides from "./slides.json";
-
 const slidesModule = (() => {
   // Cache DOM
-  const mainElement = document.querySelector(".main");
-  const ctaElement = document.querySelector(".cta");
-  const slidesTemplate = document.querySelector(".slides-template").innerHTML;
-  let slidesListElement = null;
-  let linePatternElement = null;
-  let activeSlideItemId = "list-item-family-gathering";
-  let activeSlideItemElement = null;
-  let slidesElement = null;
+  const slides = document.querySelectorAll(".slides__slide");
+  const familyGathering = document.querySelector("#family-gathering-slide");
+  const specialEvents = document.querySelector("#special-events-slide");
+  const socialEvents = document.querySelector("#social-events-slide");
+  let activeSlide = document.querySelector("[active]");
 
-  function createSlide(templateInputObject) {
-    slidesElement = elementFromString(
-      Handlebars.compile(slidesTemplate)(templateInputObject),
-    );
-
-    slidesListElement = slidesElement.querySelector(".slides__list");
-
-    linePatternElement = slidesElement.querySelector(".slides__line-pattern");
-
-    activeSlideItemElement = slidesElement.querySelector(
-      `#${activeSlideItemId}`,
-    );
-
-    activeSlideItemElement.dataset.active = "true";
-  }
+  console.log(familyGathering, socialEvents, specialEvents);
 
   // Bind Events
-  function bindEvents() {
-    slidesListElement.addEventListener("click", (event) => {
-      if (event.target.id === "") {
-        return;
-      }
-
-      activeSlideItemId = event.target.id;
-
-      slidesElement.remove();
-
-      let image;
-      let slide;
-
-      switch (activeSlideItemId) {
-        case "list-item-family-gathering":
-          image = imageFamilyGathering;
-          slide = slides.familyGathering;
-          break;
-        case "list-item-special-events":
-          image = imageSpecialEvents;
-          slide = slides.specialEvents;
-          break;
-        case "list-item-social-events":
-          image = imageSocialEvents;
-          slide = slides.socialEvents;
-          break;
-        default:
-      }
-      createSlide({
-        patternTopRight,
-        patternLines,
-        image,
-        ...slide,
+  slides.forEach((slide) => {
+    [...slide.querySelectorAll(".slides__item")].forEach((button) => {
+      button.addEventListener("click", (event) => {
+        activeSlide.toggleAttribute("active");
+        switch (event.target.id) {
+          case "list-item-family-gathering":
+            activeSlide = familyGathering;
+            activeSlide.toggleAttribute("active");
+            break;
+          case "list-item-special-events":
+            activeSlide = specialEvents;
+            activeSlide.toggleAttribute("active");
+            break;
+          case "list-item-social-events":
+            activeSlide = socialEvents;
+            activeSlide.toggleAttribute("active");
+            break;
+          default:
+        }
       });
-
-      render();
     });
-  }
-
-  function render() {
-    // The line style will position the line to the left
-    // and vertical center of the active list item.
-    activeSlideItemElement.appendChild(linePatternElement);
-    mainElement.insertBefore(slidesElement, ctaElement);
-
-    bindEvents();
-  }
-
-  function elementFromString(html) {
-    const element = document.createElement("div");
-    element.innerHTML = html.trim();
-
-    return element.firstChild;
-  }
-
-  createSlide({
-    patternTopRight,
-    patternLines,
-    image: imageFamilyGathering,
-    ...slides.familyGathering,
   });
-  render();
 })();
 
 export default slidesModule;

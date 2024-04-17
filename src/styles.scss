@@ -267,23 +267,44 @@
 }
 
 .slides {
-  height: 920px;
+  list-style: none;
+  position: relative;
 
-  display: flex;
+  $height: 920px;
+  height: $height;
 
-  gap: 50px;
+  &__slide {
+    opacity: 0;
+    visibility: hidden;
 
-  align-items: center;
-  justify-content: space-between;
+    position: absolute;
+    inset: 0;
 
-  overflow: hidden;
+    height: $height;
+
+    display: flex;
+
+    gap: 50px;
+
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    &[active] {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 
   &__container {
     position: relative;
 
+    height: 468px;
+
     display: flex;
 
-    justify-content: center;
+    justify-content: space-between;
 
     flex-direction: column;
   }
@@ -322,8 +343,9 @@
   }
 
   &__button {
-    margin-top: 60px;
-    margin-bottom: 79px;
+    position: absolute;
+
+    top: 220px;
   }
 
   &__list {
@@ -335,7 +357,7 @@
 
     user-select: none;
 
-    &[data-active="false"] {
+    &[data-inactive] {
       color: #a6a6a6;
     }
 

@@ -35,6 +35,7 @@
           type="button"
           class="button button_white text_heading_s hero__button"
           value="BOOK A TABLE"
+          data-action="book-table"
         />
       </section>
       <section class="section enjoyable-place">
@@ -191,22 +192,26 @@
           </li>
         </ul>
       </section>
-      <script class="slides-template" type="text/x-handlebars-template">
-        <section class="section slides">
+      <ul class="slides">
+        <section
+          class="section slides__slide"
+          id="family-gathering-slide"
+          active
+        >
           <img
-            src="{{patternTopRight}}"
+            src="./assets/patterns/pattern-curve-top-right.svg"
             alt="pattern"
             class="slides__top-right-pattern"
             height="200"
           />
           <img
-            src="{{patternLines}}"
+            src="./assets/patterns/pattern-lines.svg"
             alt="pattern"
             class="slides__lines-pattern"
             width="125"
           />
           <img
-            src="{{image}}"
+            src="assets/homepage/family-gathering-desktop@2x.jpg"
             alt="Family eating dinner at a large Table"
             class="slides__image"
             height="300"
@@ -214,44 +219,168 @@
           <div class="slides__container">
             <div class="text-group text-group_size_regular slides__text-group">
               <h2 class="text text_heading_l text-group__heading">
-                {{heading}}
+                Family Gathering
               </h2>
               <p class="text text_body_1 text-group__body">
-                {{body}}
+                We love catering for entire families. So please bring everyone
+                along for a special meal with your loved ones. We'll provide a
+                memorable experience for all.
               </p>
             </div>
             <input
               type="button"
               class="button text_heading_s slides__button"
               value="BOOK A TABLE"
+              data-action="book-table"
             />
             <ul class="slides__list">
-              <div class="slides__line-pattern"></div>
               <li
                 class="slides__item text text_heading_s"
                 id="list-item-family-gathering"
-                data-active="false"
               >
+                <div class="slides__line-pattern"></div>
                 FAMILY GATHERING
               </li>
               <li
                 class="slides__item text text_heading_s"
                 id="list-item-special-events"
-                data-active="false"
+                data-inactive
               >
                 SPECIAL EVENTS
               </li>
               <li
                 class="slides__item text text_heading_s"
                 id="list-item-social-events"
-                data-active="false"
+                data-inactive
               >
                 SOCIAL EVENTS
               </li>
             </ul>
           </div>
         </section>
-      </script>
+        <section class="section slides__slide" id="special-events-slide">
+          <img
+            src="./assets/patterns/pattern-curve-top-right.svg"
+            alt="pattern"
+            class="slides__top-right-pattern"
+            height="200"
+          />
+          <img
+            src="./assets/patterns/pattern-lines.svg"
+            alt="pattern"
+            class="slides__lines-pattern"
+            width="125"
+          />
+          <img
+            src="assets/homepage/special-events-desktop@2x.jpg"
+            alt="Family eating dinner at a large Table"
+            class="slides__image"
+            height="300"
+          />
+          <div class="slides__container">
+            <div class="text-group text-group_size_regular slides__text-group">
+              <h2 class="text text_heading_l text-group__heading">
+                Special Events
+              </h2>
+              <p class="text text_body_1 text-group__body">
+                Whether it's a romantic dinner or a special date you're
+                celebrating with others we'll look after you. We'll be sure to
+                mark your special date with an unforgettable meal.
+              </p>
+            </div>
+            <input
+              type="button"
+              class="button text_heading_s slides__button"
+              value="BOOK A TABLE"
+              data-action="book-table"
+            />
+            <ul class="slides__list">
+              <li
+                class="slides__item text text_heading_s"
+                id="list-item-family-gathering"
+                data-inactive
+              >
+                FAMILY GATHERING
+              </li>
+              <li
+                class="slides__item text text_heading_s"
+                id="list-item-special-events"
+              >
+                <div class="slides__line-pattern"></div>
+                SPECIAL EVENTS
+              </li>
+              <li
+                class="slides__item text text_heading_s"
+                id="list-item-social-events"
+                data-inactive
+              >
+                SOCIAL EVENTS
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section slides__slide" id="social-events-slide">
+          <img
+            src="./assets/patterns/pattern-curve-top-right.svg"
+            alt="pattern"
+            class="slides__top-right-pattern"
+            height="200"
+          />
+          <img
+            src="./assets/patterns/pattern-lines.svg"
+            alt="pattern"
+            class="slides__lines-pattern"
+            width="125"
+          />
+          <img
+            src="assets/homepage/social-events-desktop@2x.jpg"
+            alt="Family eating dinner at a large Table"
+            class="slides__image"
+            height="300"
+          />
+          <div class="slides__container">
+            <div class="text-group text-group_size_regular slides__text-group">
+              <h2 class="text text_heading_l text-group__heading">
+                Social Events
+              </h2>
+              <p class="text text_body_1 text-group__body">
+                Are you looking to have a large social event? No problem! We're
+                more than happy to cater for big parties. We'll work with you to
+                make your event a hit with everyone.
+              </p>
+            </div>
+            <input
+              type="button"
+              class="button text_heading_s slides__button"
+              value="BOOK A TABLE"
+              data-action="book-table"
+            />
+            <ul class="slides__list">
+              <li
+                class="slides__item text text_heading_s"
+                id="list-item-family-gathering"
+                data-inactive
+              >
+                FAMILY GATHERING
+              </li>
+              <li
+                class="slides__item text text_heading_s"
+                id="list-item-special-events"
+                data-inactive
+              >
+                SPECIAL EVENTS
+              </li>
+              <li
+                class="slides__item text text_heading_s"
+                id="list-item-social-events"
+              >
+                <div class="slides__line-pattern"></div>
+                SOCIAL EVENTS
+              </li>
+            </ul>
+          </div>
+        </section>
+      </ul>
       <section class="section cta">
         <div class="crop cta__crop">
           <img
@@ -268,6 +397,7 @@
           type="button"
           class="button button_white text_heading_s cta__button"
           value="BOOK A TABLE"
+          data-action="book-table"
         />
       </section>
     </main>
