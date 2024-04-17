@@ -498,10 +498,17 @@
                 placeholder="00"
                 name="minute"
               />
-              <select class="text text_form_1 form__input form__dropdown">
-                <option value="AM" selected>AM</option>
-                <option value="PM">PM</option>
-              </select>
+              <div class="text text_form_1 form__input form__dropdown">
+                <img
+                  class="form__dropdown-icon"
+                  src="assets/icons/icon-arrow.svg"
+                  alt="dropdown arrow"
+                />
+                <ul class="form__dropdown-list" data-inactive>
+                  <li class="form__dropdown-item" data-selected>AM</li>
+                  <li class="form__dropdown-item">PM</li>
+                </ul>
+              </div>
             </div>
           </div>
           <div class="form__input form__counter">
