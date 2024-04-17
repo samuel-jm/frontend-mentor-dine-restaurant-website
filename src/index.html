@@ -428,40 +428,74 @@
           </p>
         </div>
         <form class="form">
-          <input class="form__input" type="text" placeholder="Name" />
-          <input class="form__input" type="email" placeholder="Email" />
+          <input
+            class="text text_form_1 form__input"
+            type="text"
+            placeholder="Name"
+          />
+          <input
+            class="text text_form_1 form__input"
+            type="email"
+            placeholder="Email"
+          />
           <div class="form__group">
-            <label class="form__label">Pick a date</label>
+            <label class="text text_form_1 form__label">Pick a date</label>
             <div class="form__tuple">
-              <input class="form__input" type="number" placeholder="MM" />
-              <input class="form__input" type="number" placeholder="DD" />
-              <input class="form__input" type="number" placeholder="YYYY" />
+              <input
+                class="text text_form_1 form__input"
+                type="text"
+                placeholder="MM"
+              />
+              <input
+                class="text text_form_1 form__input"
+                type="text"
+                placeholder="DD"
+              />
+              <input
+                class="text text_form_1 form__input"
+                type="text"
+                placeholder="YYYY"
+              />
             </div>
           </div>
           <div class="form__group">
-            <label class="form__label">Pick a time</label>
+            <label class="text text_form_1 form__label">Pick a time</label>
             <div class="form__tuple">
-              <input class="form__input" type="number" placeholder="09" />
-              <input class="form__input" type="number" placeholder="00" />
-              <select class="form__input">
+              <input
+                class="text text_form_1 form__input"
+                type="text"
+                placeholder="09"
+              />
+              <input
+                class="text text_form_1 form__input"
+                type="text"
+                placeholder="00"
+              />
+              <select class="text text_form_1 form__input form__dropdown">
                 <option value="AM" selected>AM</option>
                 <option value="PM">PM</option>
               </select>
             </div>
-            <div class="form__input form__counter">
-              <img
-                class="form__button-subtract"
-                src="assets/icons/icon-minus.svg"
-                alt="minus icon"
-              />
-              <span>2 people</span>
-              <img
-                class="form__button-add"
-                src="assets/icons/icon-plus.svg"
-                alt="plus icon"
-              />
-            </div>
           </div>
+          <div class="form__input form__counter">
+            <img
+              class="form__button-subtract"
+              src="assets/icons/icon-minus.svg"
+              alt="minus icon"
+            />
+            <span class="text text_form_2">2 people</span>
+            <img
+              class="form__button-add"
+              src="assets/icons/icon-plus.svg"
+              alt="plus icon"
+            />
+          </div>
+          <input
+            type="button"
+            value="MAKE RESERVATION"
+            class="button text_heading_s cta__button"
+            data-action="make-reservation"
+          />
         </form>
       </section>
       <section class="section pattern-section">

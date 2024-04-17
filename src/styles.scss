@@ -43,6 +43,31 @@
   background: #aaa;
 }
 
+.button {
+  width: 245px;
+  height: 64px;
+
+  background: none;
+  border: 1px solid var(--cod-gray);
+  color: var(--cod-gray);
+
+  &:hover {
+    color: white;
+    background: var(--cod-gray);
+    cursor: pointer;
+  }
+
+  &_white {
+    border: 1px solid white;
+    color: white;
+
+    &:hover {
+      color: var(--mirage);
+      background: white;
+    }
+  }
+}
+
 .body {
   display: flex;
   flex-direction: column;
@@ -459,6 +484,88 @@ main {
 .form {
   position: relative;
   z-index: 1;
+
+  background: white;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  max-width: 540px;
+  min-height: 545px;
+
+  padding: 48px;
+
+  left: 127px;
+  bottom: -222px;
+
+  box-shadow: 0 75px 100px -50px rgba(56, 66, 85, 0.5032);
+
+  &__dropdown {
+    appearance: none;
+    background-image: url("./assets/icons/icon-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) calc(50% - 2px);
+    background-size: 16px 8px;
+  }
+
+  &__input {
+    background-color: white;
+    height: 43px;
+
+    padding-left: 16px;
+
+    border: none;
+    border-bottom: 1px solid #8e8e8e;
+  }
+
+  & > * {
+    width: 100%;
+  }
+
+  &__counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 32px;
+  }
+
+  &__button-subtract {
+    width: 5.8px;
+    height: 2.38px;
+  }
+
+  &__button-add {
+    width: 9.24px;
+    height: 9.24px;
+  }
+
+  &__group {
+    display: flex;
+
+    gap: 65px;
+
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__tuple {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 16px;
+
+    & > * {
+      width: 80px;
+
+      &:last-child {
+        width: 97px;
+      }
+    }
+  }
 }
 
 .pattern-section {
@@ -500,31 +607,6 @@ main {
 
 .crop {
   overflow: hidden;
-}
-
-.button {
-  width: 245px;
-  height: 64px;
-
-  background: none;
-  border: 1px solid var(--cod-gray);
-  color: var(--cod-gray);
-
-  &:hover {
-    color: white;
-    background: var(--cod-gray);
-    cursor: pointer;
-  }
-
-  &_white {
-    border: 1px solid white;
-    color: white;
-
-    &:hover {
-      color: var(--mirage);
-      background: white;
-    }
-  }
 }
 
 .logo {
@@ -591,6 +673,21 @@ main {
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
+  }
+
+  &_form_1 {
+    font-family: "League Spartan";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &_form_2 {
+    font-family: "League Spartan";
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.25px;
   }
 }
 
