@@ -428,12 +428,17 @@
           </p>
         </div>
         <form class="form">
-          <input
-            class="text text_form_1 form__input"
-            type="text"
-            placeholder="Name"
-            name="name"
-          />
+          <div class="form__required-label-group">
+            <input
+              class="text text_form_1 form__input"
+              type="text"
+              placeholder="Name"
+              name="name"
+            />
+            <label class="text text_form_3 form__required form__required_offset"
+              >This field is required</label
+            >
+          </div>
           <div class="form__required-label-group">
             <input
               class="text text_form_1 form__input"
@@ -505,7 +510,7 @@
               src="assets/icons/icon-minus.svg"
               alt="minus icon"
             />
-            <span class="text text_form_2">2 people</span>
+            <span class="text text_form_2 person-count">2 people</span>
             <img
               class="form__button-add"
               src="assets/icons/icon-plus.svg"
