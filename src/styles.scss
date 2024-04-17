@@ -67,7 +67,7 @@
 }
 
 .hero {
-  min-height: 820px;
+  height: 820px;
 
   padding-top: 65px;
 
@@ -108,35 +108,37 @@
 }
 
 .enjoyable-place {
-  height: 650px;
+  height: 629px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 50px;
 
   &__text-group {
-    position: absolute;
-
-    top: 50%;
-    transform: translateY(-55%);
-    right: var(--horizontal-padding);
+    position: relative;
   }
 
   &__crop {
-    position: absolute;
+    position: relative;
 
-    width: min(540px, calc(50% - var(--horizontal-padding) - 15px));
-    height: 720px;
+    top: -24.5px;
+
+    max-width: min(50%, 540px);
+    aspect-ratio: 540/720;
 
     box-shadow: 0 55px 80px -20px #aaa;
 
     z-index: 1;
-
-    bottom: 0;
-    left: var(--horizontal-padding);
   }
 
   &__image {
-    width: auto;
+    width: 955px;
     height: auto;
 
-    transform: translate(-25%, -33%);
+    transform: translate(-252px, -334px);
   }
 
   &__top-right-pattern {
@@ -146,7 +148,7 @@
     height: auto;
 
     left: 0;
-    bottom: 75px;
+    bottom: 57px;
   }
 }
 
@@ -517,39 +519,39 @@
   }
 
   &_size_hero > &__heading {
-    width: 14ch;
+    max-width: 14ch;
     margin-bottom: 10px;
   }
 
   &_size_hero > &__body {
-    width: 38ch;
+    max-width: 38ch;
     margin-bottom: 10px;
   }
 
   &_size_regular > &__heading {
-    width: 13ch;
+    max-width: 13ch;
     margin-bottom: 27px;
   }
 
   &_size_regular > &__body {
-    width: 39ch;
+    max-width: 39ch;
   }
 
   &_size_small > &__heading {
-    width: fit-content;
+    max-width: fit-content;
     margin-bottom: 6px;
   }
 
   &_size_small > &__body {
-    width: 40ch;
+    max-width: 40ch;
   }
 
   &_size_large > &__heading {
-    width: 18ch;
+    max-width: 18ch;
     margin-bottom: 27px;
   }
 
   &_size_large > &__body {
-    width: 40ch;
+    max-width: 40ch;
   }
 }
