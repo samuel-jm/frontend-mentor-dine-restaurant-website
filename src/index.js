@@ -2,6 +2,7 @@ import "./styles.scss";
 import "./classListModule";
 import "./bookigModule";
 import "./slides";
+import "./mediaModule";
 
 const mainElement = document.querySelector(".main-page");
 const bookingElement = document.querySelector(".booking-page");
