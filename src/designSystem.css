@@ -1,0 +1,67 @@
+@font-face {
+  font-family: "League Spartan";
+  font-weight: 300;
+  src: url("./assets/fonts/static/LeagueSpartan-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "League Spartan";
+  font-weight: 400;
+  src: url("./assets/fonts/static/LeagueSpartan-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "League Spartan";
+  font-weight: 600;
+  src: url("./assets/fonts/static/LeagueSpartan-SemiBold.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "League Spartan";
+  font-weight: 700;
+  src: url("./assets/fonts/static/LeagueSpartan-Bold.ttf") format("truetype");
+}
+
+:root {
+  --colour-beaver: #9e7f66;
+  --colour-mirage: #17192b;
+  --colour-cod-gray: #111111;
+  --colour-ebony-clay: #242b37;
+  --colour-shuttle-gray: #5c6779;
+  --colour-error-red: #b54949;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-semi-bold: 600;
+  --weight-bold: 700;
+
+  --size-2xs: 10px;
+  --size-xs: 14px;
+  --size-s: 16px;
+  --size-m: 17px;
+  --size-l: 20px;
+  --size-xl: 32px;
+  --size-2xl: 48px;
+  --size-3xl: 80px;
+
+  --line-height-3xs: 16px;
+  --line-height-2xs: 24px;
+  --line-height-xs: 26px;
+  --line-height-s: 28px;
+  --line-height-m: 30px;
+  --line-height-l: 40px;
+  --line-height-xl: 48px;
+  --line-height-2xl: 64px;
+  --line-height-3xl: 80px;
+
+  --letter-spacing-zero: 0px;
+  --letter-spacing-3xs: -1px;
+  --letter-spacing-2xs: -0.6px;
+  --letter-spacing-xs: -0.5px;
+  --letter-spacing-s: -0.4px;
+  --letter-spacing-m: -0.25px;
+  --letter-spacing-l: -0.13px;
+  --letter-spacing-xl: 2px;
+  --letter-spacing-2xl: 2.5px;
+}

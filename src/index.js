@@ -1,3 +1,4 @@
+import "./designSystem.css";
 import "./styles.scss";
 import "./classListModule";
 import "./bookigModule";
