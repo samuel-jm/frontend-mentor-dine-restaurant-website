@@ -973,4 +973,62 @@ main {
       bottom: 0px;
     }
   }
+
+  .locally-sourced {
+    height: 793px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    gap: 56px;
+
+    &__text-group {
+      position: static;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      text-align: center;
+    }
+
+    &__crop {
+      position: static;
+
+      max-width: 100%;
+      aspect-ratio: 573/360;
+    }
+
+    &__image {
+      width: 100%;
+      height: auto;
+    }
+
+    &__top-left-pattern {
+      position: absolute;
+
+      width: auto;
+      height: auto;
+
+      bottom: 0;
+      right: -511px;
+    }
+
+    &__lines-pattern {
+      position: absolute;
+
+      width: auto;
+      height: auto;
+
+      z-index: 1;
+
+      right: 51px;
+      bottom: 489px;
+      transform: translateY(0%);
+    }
+  }
 }
