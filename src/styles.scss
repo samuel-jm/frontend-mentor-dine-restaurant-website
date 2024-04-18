@@ -196,6 +196,18 @@
       background: white;
     }
   }
+
+  &_invert {
+    color: white;
+    background: var(--cod-gray);
+    cursor: pointer;
+
+    &:hover {
+      background: white;
+      border: 1px solid var(--cod-gray);
+      color: var(--cod-gray);
+    }
+  }
 }
 
 .body {
