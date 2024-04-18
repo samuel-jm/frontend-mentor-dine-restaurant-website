@@ -27,17 +27,12 @@ const bookingModule = (() => {
   let timeDropdownSelectedItem =
     timeDropdownListElement.querySelector("li[data-selected]");
 
-  const submitButtonElement = form.querySelector(
-    "input[data-action='make-reservation']",
-  );
-
   timeDropdownIconElement.addEventListener("click", (event) => {
     timeDropdownIconElement.toggleAttribute("data-open");
     timeDropdownListElement.toggleAttribute("data-inactive");
   });
 
   timeDropdownListElement.addEventListener("click", (event) => {
-    console.log(event.target.textContent);
     if (event.target.matches("li.form__dropdown-item")) {
       timeDropdownTextElement.textContent = event.target.textContent;
       timeDropdownIconElement.toggleAttribute("data-open");
@@ -46,11 +41,6 @@ const bookingModule = (() => {
       timeDropdownSelectedItem = event.target;
       timeDropdownSelectedItem.toggleAttribute("data-selected");
     }
-  });
-
-  submitButtonElement.addEventListener("click", (event) => {
-    bookingElement.style.display = "none";
-    mainElement.style.display = "flow";
   });
 
   [(minusButton, addButton)].forEach((button) => {
@@ -69,19 +59,7 @@ const bookingModule = (() => {
 
   // bind events
   form.addEventListener("submit", (event) => {
-    nameElement.toggleAttribute("invalid");
-    nameRequiredLabel.toggleAttribute("invalid");
-    emailElement.toggleAttribute("invalid");
-    emailRequiredLabel.toggleAttribute("invalid");
-    dateLabel.toggleAttribute("invalid");
-    dateIncompleteLabel.toggleAttribute("invalid");
-    monthElement.toggleAttribute("invalid");
-    dayElement.toggleAttribute("invalid");
-    yearElement.toggleAttribute("invalid");
-    timeLabel.toggleAttribute("invalid");
-    timeIncompleteLabel.toggleAttribute("invalid");
-    hourElement.toggleAttribute("invalid");
-    minuteElement.toggleAttribute("invalid");
+    let isValid = true;
 
     if (isNameValid(nameElement.value)) {
       nameElement.removeAttribute("invalid");
@@ -89,6 +67,7 @@ const bookingModule = (() => {
     } else {
       nameElement.setAttribute("invalid", "");
       nameRequiredLabel.setAttribute("invalid", "");
+      isValid = false;
     }
 
     if (isEmailValid(emailElement.value)) {
@@ -97,6 +76,7 @@ const bookingModule = (() => {
     } else {
       emailElement.setAttribute("invalid", "");
       emailRequiredLabel.setAttribute("invalid", "");
+      isValid = false;
     }
 
     if (isDateValid(monthElement.value, dayElement.value, yearElement.value)) {
@@ -111,6 +91,7 @@ const bookingModule = (() => {
       dayElement.setAttribute("invalid", "");
       monthElement.setAttribute("invalid", "");
       yearElement.setAttribute("invalid", "");
+      isValid = false;
     }
 
     if (isTimeValid(hourElement.value, minuteElement.value)) {
@@ -123,6 +104,12 @@ const bookingModule = (() => {
       timeIncompleteLabel.setAttribute("invalid", "");
       hourElement.setAttribute("invalid", "");
       minuteElement.setAttribute("invalid", "");
+      isValid = false;
+    }
+
+    if (isValid) {
+      bookingElement.style.display = "none";
+      mainElement.style.display = "flow";
     }
 
     event.preventDefault();
