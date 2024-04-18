@@ -6,7 +6,7 @@
     <title>Restaurant Page</title>
   </head>
   <body class="body">
-    <main class="main">
+    <main class="main-page">
       <section class="section section_dark hero">
         <img
           src="./assets/logo.svg"
@@ -33,7 +33,7 @@
         </div>
         <input
           type="button"
-          class="button button_white text_heading_s hero__button"
+          class="button button_style_white text_heading_s hero__button"
           value="BOOK A TABLE"
           data-action="book-table"
         />
@@ -229,7 +229,7 @@
             </div>
             <input
               type="button"
-              class="button button_invert text_heading_s slides__button"
+              class="button button_style_invert text_heading_s slides__button"
               value="BOOK A TABLE"
               data-action="book-table"
             />
@@ -290,7 +290,7 @@
             </div>
             <input
               type="button"
-              class="button button_invert text_heading_s slides__button"
+              class="button button_style_invert text_heading_s slides__button"
               value="BOOK A TABLE"
               data-action="book-table"
             />
@@ -351,7 +351,7 @@
             </div>
             <input
               type="button"
-              class="button button_invert text_heading_s slides__button"
+              class="button button_style_invert text_heading_s slides__button"
               value="BOOK A TABLE"
               data-action="book-table"
             />
@@ -382,20 +382,18 @@
         </section>
       </ul>
       <section class="section cta">
-        <div class="crop cta__crop">
-          <img
-            src="./assets/homepage/ready-bg-desktop@2x.jpg"
-            alt="Vegetable dish"
-            class="cta__image"
-            height="200"
-          />
-        </div>
+        <img
+          src="./assets/homepage/ready-bg-desktop@2x.jpg"
+          alt="Vegetable dish"
+          class="cta__image"
+          height="200"
+        />
         <h2 class="text text_white text_heading_l cta__heading">
           Ready to make a reservation?
         </h2>
         <input
           type="button"
-          class="button button_white text_heading_s cta__button"
+          class="button button_style_white text_heading_s cta__button"
           value="BOOK A TABLE"
           data-action="book-table"
         />
@@ -409,14 +407,12 @@
           class="logo booking__logo"
           height="30"
         />
-        <div class="crop booking__crop">
-          <img
-            src="./assets/booking/hero-bg-desktop@2x.jpg"
-            alt="Vegetable dish"
-            class="booking__image"
-            height="200"
-          />
-        </div>
+        <img
+          src="./assets/booking/hero-bg-desktop@2x.jpg"
+          alt="Vegetable dish"
+          class="booking__image"
+          height="200"
+        />
         <div class="text-group text-group_size_hero booking__text-group">
           <h2 class="text text_white text_heading_xl text-group__heading">
             Reservations
@@ -535,7 +531,7 @@
           <input
             type="submit"
             value="MAKE RESERVATION"
-            class="button button_invert text_heading_s cta__button"
+            class="button button_style_invert text_heading_s cta__button"
             data-action="make-reservation"
           />
         </form>
@@ -558,16 +554,22 @@
     <footer class="section section_dark footer">
       <img src="./assets/logo.svg" alt="logo" class="logo" height="30" />
       <div class="footer__grid">
-        <p class="text text_white text_heading_footer">MARTHWAITE, SEDBERGH</p>
-        <p class="text text_white text_heading_footer">OPEN TIMES</p>
-        <p class="text text_white text_heading_footer">CUMBRIA</p>
-        <p class="text text_white text_heading_footer">
-          MON - FRI: 09:00 AM - 10:00 PM
-        </p>
-        <p class="text text_white text_heading_footer">+00 44 123 4567</p>
-        <p class="text text_white text_heading_footer">
-          SAT - SUN: 0900 AM - 11:30 PM
-        </p>
+        <div class="footer__group">
+          <p class="text text_white text_heading_footer">
+            MARTHWAITE, SEDBERGH
+          </p>
+          <p class="text text_white text_heading_footer">OPEN TIMES</p>
+          <p class="text text_white text_heading_footer">CUMBRIA</p>
+        </div>
+        <div class="footer__group">
+          <p class="text text_white text_heading_footer">
+            MON - FRI: 09:00 AM - 10:00 PM
+          </p>
+          <p class="text text_white text_heading_footer">+00 44 123 4567</p>
+          <p class="text text_white text_heading_footer">
+            SAT - SUN: 0900 AM - 11:30 PM
+          </p>
+        </div>
       </div>
     </footer>
   </body>

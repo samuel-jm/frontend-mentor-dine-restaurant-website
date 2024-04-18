@@ -1,6 +1,6 @@
 const bookingModule = (() => {
   // cache DOM
-  const mainElement = document.querySelector(".main");
+  const mainElement = document.querySelector(".main-page");
   const bookingElement = document.querySelector(".booking-page");
 
   const form = document.querySelector(".form");
@@ -108,6 +108,7 @@ const bookingModule = (() => {
     }
 
     if (isValid) {
+      form.reset();
       bookingElement.style.display = "none";
       mainElement.style.display = "flow";
     }

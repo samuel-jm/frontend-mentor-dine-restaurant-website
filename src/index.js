@@ -3,7 +3,7 @@ import "./classListModule";
 import "./bookigModule";
 import "./slides";
 
-const mainElement = document.querySelector(".main");
+const mainElement = document.querySelector(".main-page");
 const bookingElement = document.querySelector(".booking-page");
 
 bookingElement.style.display = "none";
