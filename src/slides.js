@@ -6,8 +6,6 @@ const slidesModule = (() => {
   const socialEvents = document.querySelector("#social-events-slide");
   let activeSlide = document.querySelector("[active]");
 
-  console.log(familyGathering, socialEvents, specialEvents);
-
   // Bind Events
   slides.forEach((slide) => {
     [...slide.querySelectorAll(".slides__item")].forEach((button) => {
