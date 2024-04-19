@@ -846,7 +846,8 @@ main {
 
 @media (max-width: 1100px) {
   :root {
-    --horizontal-padding: 98px;
+    --t: calc(100vw - 600px) / calc(768 - 600);
+    --horizontal-padding: clamp(65px, 65px + var(--t) * (98 - 65), 98px);
   }
 
   .text {
