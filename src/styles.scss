@@ -1116,7 +1116,8 @@ main {
     position: relative;
 
     $height: 1021px;
-    height: $height;
+    height: fit-content;
+    min-height: $height;
 
     &__text-group {
       display: flex;
@@ -1129,7 +1130,6 @@ main {
 
     &__slide {
       padding-top: 120px;
-      display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
@@ -1139,7 +1139,8 @@ main {
       position: absolute;
       inset: 0;
 
-      height: $height;
+      height: fit-content;
+      min-height: $height;
 
       gap: 0px;
 
@@ -1149,15 +1150,17 @@ main {
       overflow: hidden;
 
       &[active] {
+        position: relative;
         opacity: 1;
         display: flex;
       }
     }
 
     &__container {
-      position: relative;
+      position: static;
 
       margin-top: 57px;
+      margin-bottom: 120px;
 
       width: calc(100% + 2 * var(--horizontal-padding));
       height: 364px;
@@ -1262,17 +1265,23 @@ main {
 
     padding: 0;
 
-    &__image {
-      position: absolute;
-
-      width: 100;
-      height: auto;
-    }
+    overflow: hidden;
 
     display: flex;
 
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: space-between;
+
+    gap: 24px;
+
+    &__image {
+      position: absolute;
+
+      width: 100%;
+      height: auto;
+    }
 
     &__heading,
     &__button {
@@ -1281,11 +1290,11 @@ main {
     }
 
     &__heading {
-      margin-left: var(--horizontal-padding);
+      margin-left: 0;
     }
 
     &__button {
-      margin-right: var(--horizontal-padding);
+      margin-right: 0;
     }
   }
 }
