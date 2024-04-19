@@ -20,6 +20,9 @@ const bookingModule = (() => {
   const personCount = document.querySelector(".person-count");
   const minusButton = form.querySelector(".form__button-subtract");
   const addButton = form.querySelector(".form__button-add");
+  const makeReservationButtons = bookingElement.querySelectorAll(
+    "[data-action='make-reservation']",
+  );
 
   const timeDropdownIconElement = form.querySelector(".form__dropdown-icon");
   const timeDropdownListElement = form.querySelector(".form__dropdown-list");
@@ -58,62 +61,66 @@ const bookingModule = (() => {
   });
 
   // bind events
-  form.addEventListener("submit", (event) => {
-    let isValid = true;
+  [...makeReservationButtons].forEach((button) => {
+    button.addEventListener("click", (event) => {
+      let isValid = true;
 
-    if (isNameValid(nameElement.value)) {
-      nameElement.removeAttribute("invalid");
-      nameRequiredLabel.removeAttribute("invalid");
-    } else {
-      nameElement.setAttribute("invalid", "");
-      nameRequiredLabel.setAttribute("invalid", "");
-      isValid = false;
-    }
+      if (isNameValid(nameElement.value)) {
+        nameElement.removeAttribute("invalid");
+        nameRequiredLabel.removeAttribute("invalid");
+      } else {
+        nameElement.setAttribute("invalid", "");
+        nameRequiredLabel.setAttribute("invalid", "");
+        isValid = false;
+      }
 
-    if (isEmailValid(emailElement.value)) {
-      emailElement.removeAttribute("invalid");
-      emailRequiredLabel.removeAttribute("invalid");
-    } else {
-      emailElement.setAttribute("invalid", "");
-      emailRequiredLabel.setAttribute("invalid", "");
-      isValid = false;
-    }
+      if (isEmailValid(emailElement.value)) {
+        emailElement.removeAttribute("invalid");
+        emailRequiredLabel.removeAttribute("invalid");
+      } else {
+        emailElement.setAttribute("invalid", "");
+        emailRequiredLabel.setAttribute("invalid", "");
+        isValid = false;
+      }
 
-    if (isDateValid(monthElement.value, dayElement.value, yearElement.value)) {
-      dateLabel.removeAttribute("invalid");
-      dateIncompleteLabel.removeAttribute("invalid");
-      dayElement.removeAttribute("invalid");
-      monthElement.removeAttribute("invalid");
-      yearElement.removeAttribute("invalid");
-    } else {
-      dateLabel.setAttribute("invalid", "");
-      dateIncompleteLabel.setAttribute("invalid", "");
-      dayElement.setAttribute("invalid", "");
-      monthElement.setAttribute("invalid", "");
-      yearElement.setAttribute("invalid", "");
-      isValid = false;
-    }
+      if (
+        isDateValid(monthElement.value, dayElement.value, yearElement.value)
+      ) {
+        dateLabel.removeAttribute("invalid");
+        dateIncompleteLabel.removeAttribute("invalid");
+        dayElement.removeAttribute("invalid");
+        monthElement.removeAttribute("invalid");
+        yearElement.removeAttribute("invalid");
+      } else {
+        dateLabel.setAttribute("invalid", "");
+        dateIncompleteLabel.setAttribute("invalid", "");
+        dayElement.setAttribute("invalid", "");
+        monthElement.setAttribute("invalid", "");
+        yearElement.setAttribute("invalid", "");
+        isValid = false;
+      }
 
-    if (isTimeValid(hourElement.value, minuteElement.value)) {
-      timeLabel.removeAttribute("invalid");
-      timeIncompleteLabel.removeAttribute("invalid");
-      hourElement.removeAttribute("invalid");
-      minuteElement.removeAttribute("invalid");
-    } else {
-      timeLabel.setAttribute("invalid", "");
-      timeIncompleteLabel.setAttribute("invalid", "");
-      hourElement.setAttribute("invalid", "");
-      minuteElement.setAttribute("invalid", "");
-      isValid = false;
-    }
+      if (isTimeValid(hourElement.value, minuteElement.value)) {
+        timeLabel.removeAttribute("invalid");
+        timeIncompleteLabel.removeAttribute("invalid");
+        hourElement.removeAttribute("invalid");
+        minuteElement.removeAttribute("invalid");
+      } else {
+        timeLabel.setAttribute("invalid", "");
+        timeIncompleteLabel.setAttribute("invalid", "");
+        hourElement.setAttribute("invalid", "");
+        minuteElement.setAttribute("invalid", "");
+        isValid = false;
+      }
 
-    if (isValid) {
-      form.reset();
-      bookingElement.style.display = "none";
-      mainElement.style.display = "flow";
-    }
+      if (isValid) {
+        form.reset();
+        bookingElement.style.display = "none";
+        mainElement.style.display = "flow";
+      }
 
-    event.preventDefault();
+      event.preventDefault();
+    });
   });
 
   function isNameValid(name) {
