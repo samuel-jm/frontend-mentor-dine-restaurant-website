@@ -288,6 +288,7 @@ main {
   height: 782px;
 
   display: flex;
+  flex-direction: row-reverse;
 
   justify-content: space-between;
   align-items: center;
@@ -552,14 +553,6 @@ main {
   &__button {
     position: relative;
     z-index: 1;
-  }
-
-  &__heading {
-    margin-left: var(--horizontal-padding);
-  }
-
-  &__button {
-    margin-right: var(--horizontal-padding);
   }
 }
 
@@ -869,7 +862,7 @@ main {
     }
 
     &_size_hero > &__body {
-      max-width: 40ch;
+      max-width: 50ch;
       margin-bottom: 0px;
     }
 
