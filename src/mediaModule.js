@@ -25,6 +25,9 @@ import socialEventsImageMobile from "./assets/homepage/social-events-mobile@2x.j
 import readyImageDesktop from "./assets/homepage/ready-bg-desktop@2x.jpg";
 import readyImageTablet from "./assets/homepage/ready-bg-tablet@2x.jpg";
 import readyImageMobile from "./assets/homepage/ready-bg-mobile@2x.jpg";
+import bookingImageDesktop from "./assets/booking/hero-bg-desktop@2x.jpg";
+import bookingImageTablet from "./assets/booking/hero-bg-tablet@2x.jpg";
+import bookingImageMobile from "./assets/booking/hero-bg-mobile@2x.jpg";
 
 const mediaModules = (() => {
   // cache DOM
@@ -42,6 +45,7 @@ const mediaModules = (() => {
   const specialEventsImageElement = document.querySelector("[special]");
   const socialEventsImageElement = document.querySelector("[social]");
   const readyImage = document.querySelector(".cta__image");
+  const bookingImage = document.querySelector(".booking__image");
 
   const tablet = matchMedia("(max-width: 1100px)");
   const mobile = matchMedia("(max-width: 600px)");
@@ -62,6 +66,7 @@ const mediaModules = (() => {
       specialEventsImageElement.src = specialEventsImageMobile;
       socialEventsImageElement.src = socialEventsImageMobile;
       readyImage.src = readyImageMobile;
+      bookingImage.src = bookingImageMobile;
     } else if (tablet.matches) {
       heroImageElement.src = heroImageTablet;
       enjoyablePlaceImageElement.src = enjoyablePlaceImageTablet;
@@ -73,6 +78,7 @@ const mediaModules = (() => {
       specialEventsImageElement.src = specialEventsImageTablet;
       socialEventsImageElement.src = socialEventsImageTablet;
       readyImage.src = readyImageTablet;
+      bookingImage.src = bookingImageTablet;
     } else {
       heroImageElement.src = heroImageDesktop;
       enjoyablePlaceImageElement.src = enjoyablePlaceImageDesktop;
@@ -84,6 +90,7 @@ const mediaModules = (() => {
       specialEventsImageElement.src = specialEventsImageDesktop;
       socialEventsImageElement.src = socialEventsImageDesktop;
       readyImage.src = readyImageDesktop;
+      bookingImage.src = bookingImageDesktop;
     }
   }
 
