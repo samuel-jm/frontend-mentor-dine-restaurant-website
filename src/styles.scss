@@ -92,47 +92,39 @@
   }
 
   &_size_hero > &__heading {
-    background-color: red;
     max-width: 14ch;
     margin-bottom: 10px;
   }
 
   &_size_hero > &__body {
-    background-color: green;
     max-width: 38ch;
     margin-bottom: 10px;
   }
 
   &_size_regular > &__heading {
-    background-color: blueviolet;
     max-width: 13ch;
     margin-bottom: 27px;
   }
 
   &_size_regular > &__body {
-    background-color: palegoldenrod;
     max-width: 39ch;
   }
 
   &_size_small > &__heading {
-    background-color: royalblue;
     max-width: fit-content;
     margin-bottom: 6px;
   }
 
   &_size_small > &__body {
-    background-color: olivedrab;
     max-width: 40ch;
   }
 
   &_size_large > &__heading {
-    background-color: aqua;
     max-width: 18ch;
     margin-bottom: 27px;
   }
 
   &_size_large > &__body {
-    background-color: orchid;
     max-width: 40ch;
   }
 }
