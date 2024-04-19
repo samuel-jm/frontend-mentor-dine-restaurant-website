@@ -44,7 +44,7 @@ const mediaModules = (() => {
   const readyImage = document.querySelector(".cta__image");
 
   const tablet = matchMedia("(max-width: 1100px)");
-  const mobile = matchMedia("(max-width: 0px)");
+  const mobile = matchMedia("(max-width: 600px)");
 
   // bindEvents
   tablet.addEventListener("change", onMediaChange);
