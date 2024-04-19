@@ -1281,6 +1281,11 @@ main {
 
       width: 100%;
       height: auto;
+
+      @media (max-width: 768px) {
+        width: auto;
+        height: 100%;
+      }
     }
 
     &__heading,
@@ -1290,6 +1295,7 @@ main {
     }
 
     &__heading {
+      text-align: center;
       margin-left: 0;
     }
 
