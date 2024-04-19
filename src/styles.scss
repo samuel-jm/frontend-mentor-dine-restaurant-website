@@ -542,10 +542,10 @@ main {
 .cta {
   height: 240px;
 
-  padding: 0;
-
   &__image {
     position: absolute;
+
+    left: 0;
 
     width: auto;
     height: 100%;
@@ -1263,8 +1263,6 @@ main {
   .cta {
     height: 272px;
 
-    padding: 0;
-
     overflow: hidden;
 
     display: flex;
@@ -1272,7 +1270,6 @@ main {
     flex-direction: column;
 
     justify-content: center;
-    align-items: space-between;
 
     gap: 24px;
 
