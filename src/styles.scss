@@ -992,6 +992,8 @@ main {
 
     gap: 56px;
 
+    padding-bottom: 118px;
+
     &__text-group {
       position: static;
 
@@ -1194,9 +1196,9 @@ main {
 
     &__text-group {
       height: fit-content;
-      margin-top: 0px;
+      margin-top: 47px;
       margin-bottom: 0px;
-      align-self: center;
+      align-self: self-start;
       transform: translateY(-6px);
     }
 
