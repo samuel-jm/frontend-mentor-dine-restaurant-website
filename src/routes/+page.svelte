@@ -3,6 +3,7 @@
 	import Overview from './Overview.svelte';
 	import Highlights from './Highlights.svelte';
 	import Slides from './Slides.svelte';
+	import Cta from './Cta.svelte';
 
 	const minPadding = 35;
 	const maxPadding = 165;
@@ -17,3 +18,4 @@
 <Overview --horizontal-padding={horizontalPadding} />
 <Highlights --horizontal-padding={horizontalPadding} />
 <Slides --horizontal-padding={horizontalPadding} />
+<Cta --horizontal-padding={horizontalPadding} />
