@@ -27,6 +27,8 @@
 			border: var(--border-hover, 1px solid black);
 
 			color: var(--colour-cod-gray);
+
+			cursor: pointer;
 		}
 	}
 </style>
