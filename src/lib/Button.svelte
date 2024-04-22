@@ -13,9 +13,15 @@
 		background-color: var(--bg, black);
 		border-radius: 0px;
 		border: 1px solid white;
-		padding: 25px 55px;
+		padding: 23px 53px;
 
 		color: white;
+
+		font-family: 'League Spartan';
+		font-size: var(--size-m);
+		font-weight: var(--weight-semi-bold);
+		letter-spacing: var(--letter-spacing-2xl);
+		line-height: var(--line-height-3xs);
 
 		&:hover {
 			background-color: white;
