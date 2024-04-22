@@ -27,7 +27,6 @@
 
 	section {
 		height: var(--height);
-		padding: 0 var(--horizontal-padding);
 		padding-top: 65px;
 
 		background-color: var(--colour-cod-gray);

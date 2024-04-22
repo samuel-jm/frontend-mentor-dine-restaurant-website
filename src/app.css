@@ -1,9 +1,8 @@
 * {
 	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
 
-	--horizontal-padding: 165px;
+	margin: 0;
+	padding: 0;
 }
 
 html {
@@ -11,10 +10,12 @@ html {
 }
 
 body {
-	max-width: 1440px;
 	margin: 0 auto;
+	max-width: 1440px;
 }
 
 section {
 	position: relative;
+
+	padding: 0 var(--horizontal-padding);
 }
