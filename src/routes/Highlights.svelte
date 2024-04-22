@@ -125,7 +125,7 @@
 
 			& #line {
 				position: relative;
-				top: 0.65em;
+				top: 0.5em;
 				right: 62px;
 
 				width: 32px;
