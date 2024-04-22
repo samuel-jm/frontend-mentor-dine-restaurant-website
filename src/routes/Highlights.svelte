@@ -55,6 +55,7 @@
 		align-items: flex-start;
 		justify-content: space-between;
 		gap: 125px;
+		padding-bottom: 120px;
 
 		min-height: 761px;
 
@@ -100,6 +101,8 @@
 
 		& li {
 			display: flex;
+			align-items: flex-start;
+
 			gap: 62px;
 
 			& > img {
@@ -118,6 +121,15 @@
 				font-weight: var(--weight-regular);
 				letter-spacing: var(--letter-spacing-zero);
 				line-height: var(--line-height-xs);
+			}
+
+			& #line {
+				position: relative;
+				top: 0.65em;
+				right: 62px;
+
+				width: 32px;
+				border-bottom: 1px solid var(--colour-beaver);
 			}
 
 			&#li-divider {
