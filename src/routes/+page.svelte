@@ -2,6 +2,7 @@
 	import Hero from './Hero.svelte';
 	import Overview from './Overview.svelte';
 	import Highlights from './Highlights.svelte';
+	import Slides from './Slides.svelte';
 
 	const minPadding = 35;
 	const maxPadding = 165;
@@ -15,3 +16,4 @@
 <Hero --horizontal-padding={horizontalPadding} />
 <Overview --horizontal-padding={horizontalPadding} />
 <Highlights --horizontal-padding={horizontalPadding} />
+<Slides --horizontal-padding={horizontalPadding} />

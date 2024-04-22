@@ -1,9 +1,8 @@
 <script>
 	export let text;
-	export let style;
 </script>
 
-<input type="button" value={text} {style} />
+<input type="button" value={text} />
 
 <style lang="scss">
 	input {
