@@ -1,5 +1,5 @@
 <script>
-	import Button from '$lib/Button.svelte';
+	import Button from './Button.svelte';
 </script>
 
 <section>
@@ -16,12 +16,7 @@
 			Experience our seasonal menu in beautiful country surroundings. Eat the freshest produce from
 			the comfort of our farmhouse.
 		</p>
-		<Button
-			--position="relative"
-			--bg="var(--colour-cod-gray)"
-			--border-hover="none"
-			text={'BOOK A TABLE'}
-		/>
+		<Button --bg="var(--colour-cod-gray)" --border-hover="none" text={'BOOK A TABLE'} />
 	</div>
 </section>
 
@@ -64,14 +59,13 @@
 	}
 
 	.group {
-		width: fit-content;
-		max-width: 50%;
-
-		display: flex;
-		flex-direction: column;
 		align-items: flex-start;
+		flex-direction: column;
+		display: flex;
 
 		margin-top: 153px;
+		width: fit-content;
+		max-width: 50%;
 
 		& h1 {
 			position: relative;
@@ -90,10 +84,9 @@
 		& p {
 			position: relative;
 
-			max-width: 38ch;
-
-			margin-top: 10px;
 			margin-bottom: 40px;
+			margin-top: 10px;
+			max-width: 38ch;
 
 			color: white;
 
