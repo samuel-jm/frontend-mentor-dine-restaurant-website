@@ -14,6 +14,8 @@
 		justify-content: space-between;
 		align-items: center;
 
+		overflow: hidden;
+
 		height: 240px;
 	}
 
