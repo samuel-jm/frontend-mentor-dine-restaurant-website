@@ -1,4 +1,5 @@
 <script>
+	import Button from '$lib/Button.svelte';
 </script>
 
 <section>
@@ -8,14 +9,19 @@
 			alt="A top down view of a spaghetti and prawn dish"
 		/>
 	</div>
-	<div>
-		<img id="logo" src="/logo.svg" alt="Dine" />
+	<img id="logo" src="/logo.svg" alt="Dine" />
+	<div class="group">
 		<h1>Exquisite dining since 1989</h1>
 		<p>
 			Experience our seasonal menu in beautiful country surroundings. Eat the freshest produce from
 			the comfort of our farmhouse.
 		</p>
-		<input type="button" value="BOOK A TABLE" />
+		<Button
+			--position="relative"
+			--bg="var(--colour-cod-gray)"
+			--border-hover="none"
+			text={'BOOK A TABLE'}
+		/>
 	</div>
 </section>
 
@@ -39,7 +45,7 @@
 		top: 0;
 
 		height: var(--height);
-		width: min(1000px, 100%);
+		width: min(895px, 100%);
 
 		& > img {
 			position: absolute;
@@ -47,7 +53,7 @@
 
 			height: var(--height);
 
-			filter: contrast(90%) saturate(90%);
+			filter: contrast(95%) saturate(85%);
 		}
 	}
 
@@ -57,31 +63,45 @@
 		height: 40px;
 	}
 
-	h1 {
-		position: relative;
+	.group {
+		width: fit-content;
+		max-width: 50%;
 
-		color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
 
-		font-family: 'League Spartan';
-		font-size: var(--size-3xl);
-		font-weight: var(--weight-light);
-		letter-spacing: var(--letter-spacing-3xs);
-		line-height: var(--line-height-3xl);
-	}
+		margin-top: 153px;
 
-	p {
-		position: relative;
+		& h1 {
+			position: relative;
 
-		color: white;
+			max-width: 12ch;
 
-		font-family: 'League Spartan';
-		font-size: var(--size-l);
-		font-weight: var(--weight-regular);
-		letter-spacing: var(--letter-spacing-zero);
-		line-height: var(--line-height-m);
-	}
+			color: white;
 
-	input[type='button'] {
-		position: relative;
+			font-family: 'League Spartan';
+			font-size: var(--size-3xl);
+			font-weight: var(--weight-light);
+			letter-spacing: var(--letter-spacing-3xs);
+			line-height: var(--line-height-3xl);
+		}
+
+		& p {
+			position: relative;
+
+			max-width: 38ch;
+
+			margin-top: 10px;
+			margin-bottom: 40px;
+
+			color: white;
+
+			font-family: 'League Spartan';
+			font-size: var(--size-l);
+			font-weight: var(--weight-regular);
+			letter-spacing: var(--letter-spacing-zero);
+			line-height: var(--line-height-m);
+		}
 	}
 </style>
