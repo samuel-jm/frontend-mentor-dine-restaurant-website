@@ -2,10 +2,10 @@
 	export let text;
 </script>
 
-<input type="button" value={text} />
+<a href="/booking">{text}</a>
 
 <style lang="scss">
-	input {
+	a {
 		border: none;
 		position: relative;
 
@@ -13,6 +13,7 @@
 		border-radius: 0px;
 		border: 1px solid white;
 		padding: 23px 53px;
+		text-decoration: none;
 
 		color: white;
 
