@@ -8,7 +8,7 @@
 <style lang="scss">
 	input {
 		border: none;
-		position: var(--position);
+		position: relative;
 
 		background-color: var(--bg, black);
 		border-radius: 0px;
