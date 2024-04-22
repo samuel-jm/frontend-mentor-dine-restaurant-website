@@ -63,4 +63,6 @@
 	--letter-spacing-l: -0.13px;
 	--letter-spacing-xl: 2px;
 	--letter-spacing-2xl: 2.5px;
+
+	--box-shadow: 0 75px 100px -50px rgba(56, 66, 85, 0.5032);
 }
