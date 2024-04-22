@@ -16,7 +16,12 @@
 			Experience our seasonal menu in beautiful country surroundings. Eat the freshest produce from
 			the comfort of our farmhouse.
 		</p>
-		<Button --bg="var(--colour-cod-gray)" --border-hover="none" text={'BOOK A TABLE'} />
+		<Button
+			--bg="var(--colour-cod-gray)"
+			--border-hover="none"
+			text={'BOOK A TABLE'}
+			redirect={'/booking'}
+		/>
 	</div>
 </section>
 

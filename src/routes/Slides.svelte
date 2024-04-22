@@ -40,7 +40,7 @@
 			<p>{slide.description}</p>
 		</div>
 		<div id="button-wrapper">
-			<Button --bg="var(--colour-cod-gray)" text="BOOK A TABLE" />
+			<Button --bg="var(--colour-cod-gray)" text="BOOK A TABLE" redirect={'/booking'} />
 		</div>
 		<ul>
 			{#each slides as slide, i}

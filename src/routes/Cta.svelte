@@ -5,7 +5,7 @@
 <section>
 	<img src="/homepage/ready-bg-desktop@2x.jpg" alt="A plate of avocado and tomato on toast" />
 	<h2>Ready to make a reservation?</h2>
-	<Button --bg="transparent" text="BOOK A TABLE" />
+	<Button --bg="transparent" text="BOOK A TABLE" redirect={'/booking'} />
 </section>
 
 <style lang="scss">

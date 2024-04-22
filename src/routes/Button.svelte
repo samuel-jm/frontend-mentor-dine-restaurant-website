@@ -1,8 +1,9 @@
 <script>
 	export let text;
+	export let redirect;
 </script>
 
-<a href="/booking">{text}</a>
+<a href={redirect}>{text}</a>
 
 <style lang="scss">
 	a {
