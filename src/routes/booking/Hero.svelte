@@ -3,12 +3,7 @@
 </script>
 
 <section>
-	<img
-		id="hero-img"
-		src="/booking/hero-bg-desktop@2x.jpg"
-		alt="A plate of avocado and tomato on toast"
-	/>
-	<img id="logo" src="/logo.svg" alt="Dine" />
+	<img src="/logo.svg" alt="Dine" />
 	<div id="text-group">
 		<h1>Reservations</h1>
 		<p>
@@ -34,19 +29,13 @@
 
 		height: 600px;
 		padding-top: 65px;
+		background-image: url('/booking/hero-bg-desktop@2x.jpg');
+		background-size: auto 100%;
 
-		#logo {
+		img {
 			grid-area: logo;
 
 			height: 40px;
-		}
-
-		#hero-img {
-			position: absolute;
-
-			z-index: -1;
-
-			height: 100%;
 		}
 
 		#text-group {
