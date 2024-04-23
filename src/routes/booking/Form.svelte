@@ -1,42 +1,158 @@
 <script>
-	import Button from '../Button.svelte';
-
-	let name, email, month, day, year, hour, minute;
+	let name = '';
+	let email = '';
+	let month = '';
+	let day = '';
+	let year = '';
+	let hour = '';
+	let minute = '';
+	let nameInvalid, emailInvalid, dateInvalid, timeInvalid;
 	let people = 2;
 	let selectedMeridian = 0;
 	let dropdownOpen = false;
 
 	const meridians = ['AM', 'PM'];
+
+	let valid = true;
+
+	function validate() {
+		valid = true;
+
+		if (isNameValid(name)) {
+			nameInvalid = false;
+		} else {
+			nameInvalid = true;
+			valid = false;
+		}
+
+		if (isEmailValid(email)) {
+			emailInvalid = false;
+		} else {
+			emailInvalid = true;
+			valid = false;
+		}
+
+		if (isDateValid(month, day, year)) {
+			dateInvalid = false;
+		} else {
+			dateInvalid = true;
+			valid = false;
+		}
+
+		if (isTimeValid(hour, minute)) {
+			timeInvalid = false;
+		} else {
+			timeInvalid = true;
+			valid = false;
+		}
+
+		if (valid) {
+			window.history.back();
+		}
+	}
+
+	function isNameValid(name) {
+		return name !== '';
+	}
+
+	function isEmailValid(email) {
+		return /^\S+@\S+\.\S+$/.test(email);
+	}
+
+	function isDateValid(month, day, year) {
+		const dayReg = /^[0-9]{2}$/;
+		const monthReg = /^[0-9]{2}$/;
+		const yearReg = /^[0-9]{4}$/;
+		if (!dayReg.test(day) || !monthReg.test(month) || !yearReg.test(year)) return false;
+		if (+day < 1 || +day > 31 || +month < 1 || +month > 12 || year < 2024 || year > 2050) {
+			return false;
+		}
+
+		return true;
+	}
+
+	function isTimeValid(hour, minute) {
+		const reg = /^[0-9]{2}$/;
+		if (reg.test(hour) && reg.test(minute)) {
+			return +hour >= 0 && +hour < 12 && +minute >= 0 && +minute < 60;
+		}
+
+		return false;
+	}
 </script>
 
 <form>
 	<div class="group">
-		<input id="name" type="text" placeholder="Name" bind:value={name} autocomplete="off" />
-		<label for="name" class="required">This field is required</label>
+		<input
+			id="name"
+			type="text"
+			placeholder="Name"
+			bind:value={name}
+			autocomplete="off"
+			invalid={nameInvalid}
+		/>
+		<label for="name" class="required" invalid={nameInvalid}>This field is required</label>
 	</div>
 	<div class="group">
-		<input id="email" type="text" placeholder="Email" bind:value={email} autocomplete="off" />
-		<label for="email" class="required">This field is required</label>
+		<input
+			id="email"
+			type="text"
+			placeholder="Email"
+			bind:value={email}
+			autocomplete="off"
+			invalid={emailInvalid}
+		/>
+		<label for="email" class="required" invalid={emailInvalid}>This field is required</label>
 	</div>
 	<div>
 		<div class="group">
-			<label for="date"> Pick a date </label>
-			<label for="date" class="required"> This field is incomplete </label>
+			<label for="date" invalid={dateInvalid}> Pick a date </label>
+			<label for="date" class="required" invalid={dateInvalid}> This field is incomplete </label>
 		</div>
 		<div id="date" class="tuple">
-			<input type="text" placeholder="MM" bind:value={month} autocomplete="off" />
-			<input type="text" placeholder="DD" bind:value={day} autocomplete="off" />
-			<input type="text" placeholder="YYYY" bind:value={year} autocomplete="off" />
+			<input
+				type="text"
+				placeholder="MM"
+				bind:value={month}
+				autocomplete="off"
+				invalid={dateInvalid}
+			/>
+			<input
+				type="text"
+				placeholder="DD"
+				bind:value={day}
+				autocomplete="off"
+				invalid={dateInvalid}
+			/>
+			<input
+				type="text"
+				placeholder="YYYY"
+				bind:value={year}
+				autocomplete="off"
+				invalid={dateInvalid}
+			/>
 		</div>
 	</div>
 	<div>
 		<div class="group">
-			<label for="time"> Pick a time </label>
-			<label for="time" class="required"> This field is incomplete </label>
+			<label for="time" invalid={timeInvalid}> Pick a time </label>
+			<label for="time" class="required" invalid={timeInvalid}> This field is incomplete </label>
 		</div>
 		<div id="time" class="tuple">
-			<input type="text" placeholder="09" bind:value={hour} autocomplete="off" />
-			<input type="text" placeholder="00" bind:value={minute} autocomplete="off" />
+			<input
+				type="text"
+				placeholder="09"
+				bind:value={hour}
+				autocomplete="off"
+				invalid={timeInvalid}
+			/>
+			<input
+				type="text"
+				placeholder="00"
+				bind:value={minute}
+				autocomplete="off"
+				invalid={timeInvalid}
+			/>
 			<div class="dropdown">
 				<img src="/icons/icon-arrow.svg" alt="" data-open={dropdownOpen} />
 				<button
@@ -83,14 +199,8 @@
 			<img src="/icons/icon-plus.svg" alt="" />
 		</button>
 	</div>
-	<!-- <input type="submit" value="MAKE RESERVATION" data-action="make-reservation" /> -->
-	<Button
-		--bg={'var(--colour-cod-gray)'}
-		--border={'none'}
-		--border-hover={'1px solid var(--colour-cod-gray)'}
-		text={'MAKE RESERVATION'}
-		redirect={'/'}
-	/>
+	<!-- <input type="submt" value="MAKE RESERVATION" data-action="make-reservation" /> -->
+	<input type="submit" on:click={validate} value="MAKE RESERVATION" />
 </form>
 
 <style lang="scss">
@@ -134,16 +244,10 @@
 			line-height: var(--line-height-s);
 		}
 
-		// position: absolute;
-		// z-index: 1;
-
-		// right: var(--horizontal-padding);
-		// top: 258px;
-
-		// & *[invalid] {
-		//   color: var(--colour-error-red);
-		//   border-color: var(--colour-error-red);
-		// }
+		& *[invalid='true'] {
+			color: var(--colour-error-red);
+			border-color: var(--colour-error-red);
+		}
 
 		& > div {
 			display: flex;
@@ -163,9 +267,8 @@
 		}
 
 		.required {
-			// visibility: hidden;
+			visibility: hidden;
 			position: absolute;
-			// top: 30px;
 
 			width: max-content;
 
@@ -177,9 +280,9 @@
 			letter-spacing: var(--letter-spacing-l);
 			line-height: 0;
 
-			// &[invalid] {
-			//   visibility: visible;
-			// }
+			&[invalid='true'] {
+				visibility: visible;
+			}
 		}
 
 		input + .required {
@@ -218,14 +321,14 @@
 				background-color: white;
 				width: 100%;
 				text-align: left;
+
+				cursor: pointer;
 			}
 
 			& > ul {
 				display: none;
 				flex-direction: column;
 				align-items: flex-end;
-
-				// gap: 16px;
 
 				z-index: 2;
 
@@ -234,8 +337,6 @@
 				position: absolute;
 				background-color: white;
 				box-shadow: 0px 15px 25px rgba(56, 66, 85, 0.2462);
-
-				// padding: 18px 30px 13px 0;
 
 				left: 0;
 				bottom: -115px;
@@ -335,6 +436,36 @@
 				&:hover {
 					cursor: pointer;
 				}
+			}
+		}
+
+		& input[type='submit'] {
+			border: none;
+			position: relative;
+
+			background-color: var(--colour-cod-gray);
+			border-radius: 0px;
+			border: 1px solid white;
+			padding: 23px 53px;
+			text-decoration: none;
+			height: fit-content;
+
+			color: white;
+
+			font-family: 'League Spartan';
+			font-size: var(--size-m);
+			font-weight: var(--weight-semi-bold);
+			letter-spacing: var(--letter-spacing-2xl);
+			line-height: var(--line-height-3xs);
+			text-align: center;
+
+			&:hover {
+				background-color: white;
+				border: 1px solid black;
+
+				color: var(--colour-cod-gray);
+
+				cursor: pointer;
 			}
 		}
 	}
