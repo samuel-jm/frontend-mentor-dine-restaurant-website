@@ -349,12 +349,6 @@
 			& li {
 				width: 100%;
 				text-align: right;
-				&[selected='true'] {
-					background-image: url('/icons/icon-check.svg');
-					background-repeat: no-repeat;
-					background-position: 16px 8px;
-					background-size: 10.43px 7.66px;
-				}
 
 				button {
 					appearance: none;
