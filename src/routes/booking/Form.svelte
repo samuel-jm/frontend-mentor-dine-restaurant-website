@@ -208,6 +208,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		position: relative;
+
+		z-index: 1;
 
 		max-width: 540px;
 		min-height: 545px;
