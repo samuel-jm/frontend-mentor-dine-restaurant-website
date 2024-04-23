@@ -14,6 +14,7 @@
 		border-radius: 0px;
 		border: 1px solid white;
 		padding: 23px 53px;
+		height: fit-content;
 		text-decoration: none;
 
 		color: white;
