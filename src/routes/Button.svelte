@@ -23,6 +23,7 @@
 		font-weight: var(--weight-semi-bold);
 		letter-spacing: var(--letter-spacing-2xl);
 		line-height: var(--line-height-3xs);
+		text-align: center;
 
 		&:hover {
 			background-color: white;
