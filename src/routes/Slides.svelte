@@ -1,4 +1,6 @@
 <script>
+	import { fly, fade } from 'svelte/transition';
+
 	import Button from './Button.svelte';
 
 	const slides = [
@@ -31,44 +33,59 @@
 </script>
 
 <section>
-	<img id="pattern-tr" src="/patterns/pattern-curve-top-right.svg" alt="" />
-	<img id="slide-image" src={slide.image} alt={slide.alt} />
-	<img id="pattern-lines" src="/patterns/pattern-lines.svg" alt="" />
-	<div class="text-content">
-		<div class="text-group">
-			<h2>{slide.title}</h2>
-			<p>{slide.description}</p>
-		</div>
-		<div id="button-wrapper">
-			<Button --bg="var(--colour-cod-gray)" text="BOOK A TABLE" redirect={'/booking'} />
-		</div>
-		<ul>
-			{#each slides as slide, i}
-				<li>
-					<input
-						id="slide-{i}"
-						type="button"
-						value={slide.title.toUpperCase()}
-						on:click={() => {
-							selected = i;
-						}}
-						selected={selected === i}
-					/>
-					{#if i === selected}
-						<div id="slide-line"></div>
-					{/if}
-				</li>
-			{/each}
-		</ul>
-	</div>
+	{#each slides as slide, i}
+		{#if i === selected}
+			<div class="slide" in:fly={{ x: 1000, duration: 500 }} out:fly={{ x: -1000, duration: 500 }}>
+				<img id="pattern-tr" src="/patterns/pattern-curve-top-right.svg" alt="" />
+				<img id="slide-image" src={slide.image} alt={slide.alt} />
+				<img id="pattern-lines" src="/patterns/pattern-lines.svg" alt="" />
+				<div class="text-content">
+					<div class="text-group">
+						<h2>{slide.title}</h2>
+						<p>{slide.description}</p>
+					</div>
+					<div id="button-wrapper">
+						<Button --bg="var(--colour-cod-gray)" text="BOOK A TABLE" redirect={'/booking'} />
+					</div>
+					<ul>
+						{#each slides as slide, i}
+							<li>
+								<input
+									id="slide-{i}"
+									type="button"
+									value={slide.title.toUpperCase()}
+									on:click={() => {
+										selected = i;
+									}}
+									selected={selected === i}
+								/>
+								{#if i === selected}
+									<div id="slide-line"></div>
+								{/if}
+							</li>
+						{/each}
+					</ul>
+				</div>
+			</div>
+		{/if}
+	{/each}
 </section>
 
 <style lang="scss">
 	section {
+		display: grid;
+	}
+
+	.slide {
+		grid-row: 1;
+		grid-column: 1;
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 50px;
+
+		transition: visibility 500ms ease-in-out;
 
 		min-height: 920px;
 	}
@@ -81,12 +98,12 @@
 	}
 
 	#pattern-tr {
-		left: -350px;
+		left: calc(-350px - var(--horizontal-padding));
 		top: 0;
 	}
 
 	#pattern-lines {
-		left: calc(var(--horizontal-padding) - 40px);
+		left: -40px;
 		top: 122px;
 	}
 
