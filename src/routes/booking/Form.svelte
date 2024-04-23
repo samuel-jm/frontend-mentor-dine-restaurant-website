@@ -1,11 +1,4 @@
 <script>
-	let name = '';
-	let email = '';
-	let month = '';
-	let day = '';
-	let year = '';
-	let hour = '';
-	let minute = '';
 	let nameInvalid, emailInvalid, dateInvalid, timeInvalid;
 	let people = 2;
 	let selectedMeridian = 0;
@@ -15,31 +8,39 @@
 
 	let valid = true;
 
-	function validate() {
+	function validate(event) {
+		const form = new FormData(event.target);
+		let data = {};
+		console.log(form);
+		for (const field of form) {
+			const [key, value] = field;
+			data[key] = value;
+		}
+
 		valid = true;
 
-		if (isNameValid(name)) {
+		if (isNameValid(data.name)) {
 			nameInvalid = false;
 		} else {
 			nameInvalid = true;
 			valid = false;
 		}
 
-		if (isEmailValid(email)) {
+		if (isEmailValid(data.email)) {
 			emailInvalid = false;
 		} else {
 			emailInvalid = true;
 			valid = false;
 		}
 
-		if (isDateValid(month, day, year)) {
+		if (isDateValid(data.month, data.day, data.year)) {
 			dateInvalid = false;
 		} else {
 			dateInvalid = true;
 			valid = false;
 		}
 
-		if (isTimeValid(hour, minute)) {
+		if (isTimeValid(data.hour, data.minute)) {
 			timeInvalid = false;
 		} else {
 			timeInvalid = true;
@@ -81,27 +82,13 @@
 	}
 </script>
 
-<form>
+<form action="" on:submit|preventDefault={validate}>
 	<div class="group">
-		<input
-			id="name"
-			type="text"
-			placeholder="Name"
-			bind:value={name}
-			autocomplete="off"
-			invalid={nameInvalid}
-		/>
+		<input name="name" type="text" placeholder="Name" autocomplete="off" invalid={nameInvalid} />
 		<label for="name" class="required" invalid={nameInvalid}>This field is required</label>
 	</div>
 	<div class="group">
-		<input
-			id="email"
-			type="text"
-			placeholder="Email"
-			bind:value={email}
-			autocomplete="off"
-			invalid={emailInvalid}
-		/>
+		<input name="email" type="text" placeholder="Email" autocomplete="off" invalid={emailInvalid} />
 		<label for="email" class="required" invalid={emailInvalid}>This field is required</label>
 	</div>
 	<div>
@@ -110,27 +97,9 @@
 			<label for="date" class="required" invalid={dateInvalid}> This field is incomplete </label>
 		</div>
 		<div id="date" class="tuple">
-			<input
-				type="text"
-				placeholder="MM"
-				bind:value={month}
-				autocomplete="off"
-				invalid={dateInvalid}
-			/>
-			<input
-				type="text"
-				placeholder="DD"
-				bind:value={day}
-				autocomplete="off"
-				invalid={dateInvalid}
-			/>
-			<input
-				type="text"
-				placeholder="YYYY"
-				bind:value={year}
-				autocomplete="off"
-				invalid={dateInvalid}
-			/>
+			<input type="text" name="month" placeholder="MM" autocomplete="off" invalid={dateInvalid} />
+			<input type="text" name="day" placeholder="DD" autocomplete="off" invalid={dateInvalid} />
+			<input type="text" name="year" placeholder="YYYY" autocomplete="off" invalid={dateInvalid} />
 		</div>
 	</div>
 	<div>
@@ -139,23 +108,12 @@
 			<label for="time" class="required" invalid={timeInvalid}> This field is incomplete </label>
 		</div>
 		<div id="time" class="tuple">
-			<input
-				type="text"
-				placeholder="09"
-				bind:value={hour}
-				autocomplete="off"
-				invalid={timeInvalid}
-			/>
-			<input
-				type="text"
-				placeholder="00"
-				bind:value={minute}
-				autocomplete="off"
-				invalid={timeInvalid}
-			/>
+			<input type="text" name="hour" placeholder="09" autocomplete="off" invalid={timeInvalid} />
+			<input type="text" name="minute" placeholder="00" autocomplete="off" invalid={timeInvalid} />
 			<div class="dropdown">
 				<img src="/icons/icon-arrow.svg" alt="" data-open={dropdownOpen} />
 				<button
+					type="button"
 					on:click={() => {
 						dropdownOpen = !dropdownOpen;
 					}}
@@ -167,6 +125,8 @@
 						{#each meridians as meridian, i}
 							<li>
 								<button
+									type="button"
+									name="meridian"
 									selected={selectedMeridian === i}
 									on:click={() => {
 										selectedMeridian = i;
@@ -184,6 +144,7 @@
 	</div>
 	<div class="counter">
 		<button
+			type="button"
 			on:click={() => {
 				people = Math.max(1, people - 1);
 			}}
@@ -192,6 +153,7 @@
 		</button>
 		<span> {people} people</span>
 		<button
+			type="button"
 			on:click={() => {
 				people = Math.min(12, people + 1);
 			}}
@@ -199,8 +161,7 @@
 			<img src="/icons/icon-plus.svg" alt="" />
 		</button>
 	</div>
-	<!-- <input type="submt" value="MAKE RESERVATION" data-action="make-reservation" /> -->
-	<input type="submit" on:click={validate} value="MAKE RESERVATION" />
+	<input type="submit" value="MAKE RESERVATION" />
 </form>
 
 <style lang="scss">
@@ -222,6 +183,8 @@
 		input,
 		.dropdown,
 		.counter {
+			appearance: none;
+
 			background-color: white;
 			height: 43px;
 
@@ -247,7 +210,7 @@
 			line-height: var(--line-height-s);
 		}
 
-		& *[invalid='true'] {
+		*[invalid='true'] {
 			color: var(--colour-error-red);
 			border-color: var(--colour-error-red);
 		}
