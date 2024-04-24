@@ -20,7 +20,10 @@ section {
 	--horizontal-padding: min(165px, calc(29.545454545454547vw + -260.4545454545455px));
 
 	padding: 0 var(--horizontal-padding);
+}
 
-	@media (max-width: 1000) {
+@media (max-width: 1000px) {
+	section {
+		--horizontal-padding: min(165px, calc(32.5vw + -160px));
 	}
 }

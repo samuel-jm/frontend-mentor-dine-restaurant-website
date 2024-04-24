@@ -26,12 +26,8 @@
 </section>
 
 <style lang="scss">
-	* {
-		--height: 820px;
-	}
-
 	section {
-		height: var(--height);
+		height: 820px;
 		padding-top: 65px;
 
 		background-color: var(--colour-cod-gray);
@@ -43,14 +39,14 @@
 		right: 0;
 		top: 0;
 
-		height: var(--height);
+		height: 100%;
 		width: min(895px, 100%);
 
 		& > img {
 			position: absolute;
 			right: 0;
 
-			height: var(--height);
+			height: 100%;
 
 			filter: contrast(95%) saturate(85%);
 		}
@@ -99,6 +95,55 @@
 			font-weight: var(--weight-regular);
 			letter-spacing: var(--letter-spacing-zero);
 			line-height: var(--line-height-m);
+		}
+	}
+
+	@media (max-width: 600px) {
+	}
+
+	@media (max-width: 1000px) {
+		section {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			height: 992px;
+			padding-top: 374px;
+		}
+
+		.crop {
+			width: 100%;
+			height: 373px;
+
+			& > img {
+				position: static;
+
+				width: 100%;
+				height: auto;
+				content: url('/homepage/hero-bg-tablet@2x.jpg');
+			}
+		}
+
+		.group {
+			align-items: center;
+
+			margin-top: 38px;
+			width: 100%;
+			max-width: 100%;
+
+			text-align: center;
+
+			& h1 {
+				font-size: var(--size-2xl);
+				letter-spacing: var(--letter-spacing-2xs);
+				line-height: var(--line-height-2xl);
+			}
+
+			& p {
+				margin-top: 20px;
+				margin-bottom: 52px;
+				max-width: 50ch;
+			}
 		}
 	}
 </style>
