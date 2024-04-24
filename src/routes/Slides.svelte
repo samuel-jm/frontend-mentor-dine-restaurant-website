@@ -28,8 +28,6 @@
 	];
 
 	let selected = 0;
-
-	$: slide = slides[selected];
 </script>
 
 <section>

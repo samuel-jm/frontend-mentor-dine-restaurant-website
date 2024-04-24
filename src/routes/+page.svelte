@@ -5,11 +5,18 @@
 	import Slides from './Slides.svelte';
 	import Cta from './Cta.svelte';
 
-	export let data;
+	// const minPadding = 35;
+	// const maxPadding = 165;
+	// const minWidth = 1000;
+	// const maxWidth = 1440;
+	// const slope = (maxPadding - minPadding) / (maxWidth - minWidth);
+	// const intercept = minPadding - minWidth * slope;
+	// const horizontalPadding = `max(${minPadding}px, min(${maxPadding}px, calc(${100 * slope}vw + ${intercept}px)))`;
+	// console.log(horizontalPadding);
 </script>
 
-<Hero --horizontal-padding={data.horizontalPadding} />
-<Overview --horizontal-padding={data.horizontalPadding} />
-<Highlights --horizontal-padding={data.horizontalPadding} />
-<Slides --horizontal-padding={data.horizontalPadding} />
-<Cta --horizontal-padding={data.horizontalPadding} />
+<Hero />
+<Overview />
+<Highlights />
+<Slides />
+<Cta />
